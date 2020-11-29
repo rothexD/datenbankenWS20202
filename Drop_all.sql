@@ -14,8 +14,6 @@ DELETE FROM wagon_art;
 DELETE FROM wagon;
 DELETE FROM lokomotive;
 DELETE FROM zug;
-DELETE FROM zug_hat_lokomotiven;
-DELETE FROM zug_hat_wagons;
 DELETE FROM allergen;
 DELETE FROM produkt;
 DELETE FROM produkt_hat_allergen;
@@ -46,6 +44,7 @@ DROP SEQUENCE wartung_id_seq;
 DROP SEQUENCE verbindung_id_seq;
 DROP SEQUENCE ticket_art_id_seq;
 DROP SEQUENCE ticket_id_seq;
+DROP SEQUENCE artikel_id_seq;
 
 
 

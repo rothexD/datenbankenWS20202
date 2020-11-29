@@ -139,7 +139,7 @@ CREATE TABLE bahnsteig
 CREATE TABLE zug
 (
 	zugID NUMBER CONSTRAINT zug_pk PRIMARY KEY,
-	seriennummer VARCHAR2(250)
+	seriennummer VARCHAR2(14)
 );
 
 /**********************************************************************/

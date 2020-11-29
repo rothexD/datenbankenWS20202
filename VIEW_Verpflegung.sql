@@ -1,3 +1,11 @@
+--*********************************************************************
+--**
+--** Table: Verpflegung
+--** Developer: Samuel Fiedorowicz
+--** Description: View that allows to list every product that the train has.
+--**
+--*********************************************************************
+
 CREATE OR REPLACE
 VIEW Verpflegung AS
 SELECT z.*, p.name AS produkt
