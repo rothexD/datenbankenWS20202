@@ -402,7 +402,8 @@ CREATE TABLE produkt_hat_allergen
 /**
 /** Table: Wagon_hat_Produkt
 /** Developer: if19b172, if19b205
-/** Description: Zuordnung der Produkte zu einem Speisewagon
+/** Description: Zuordnung der Produkte zu den (Speise-)Wagons, die
+/**              dieses Produkt anbieten
 /**
 /**********************************************************************/
 
@@ -449,5 +450,6 @@ CREATE TABLE person_hat_online_artikel
     fk_personID NUMBER,
     gekauft_an TIMESTAMP,
     FOREIGN KEY(fk_artikelID) REFERENCES online_artikel(artikelID) ON DELETE CASCADE,
-    FOREIGN KEY(fk_personID) REFERENCES person(personID) ON DELETE CASCADE
+    FOREIGN KEY(fk_personID) REFERENCES person(personID) ON DELETE CASCADE,
+		CONSTRAINT person_hat_online_artikel_pk PRIMARY KEY(fk_artikelID, fk_personID)
 );
