@@ -1,3 +1,11 @@
+--*********************************************************************
+--**
+--** Table: bahnhof_timetable
+--** Developer: Samuel Fiedorowicz
+--** Description: View that show the timetable of every arrival and departure of a train with the repsective trainstation name and platform.
+--**
+--*********************************************************************
+
 CREATE OR REPLACE
 VIEW bahnhof_timetable AS
 
