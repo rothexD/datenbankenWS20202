@@ -163,7 +163,7 @@ CREATE TABLE wagon_art
 /**
 /** Table: Wagon
 /** Developer: if19b172, if19b205
-/** Description: Wagone aus denen sich ein Zug zusammensetzt
+/** Description: Wagone, die an einem Zug hängen
 /**
 /**********************************************************************/
 
@@ -173,7 +173,9 @@ CREATE TABLE wagon
 	baujahr TIMESTAMP,
 	letzte_wartung TIMESTAMP,
 	fk_wagon_artID NUMBER,
+	fk_zugID NUMBER,
 	FOREIGN KEY(fk_wagon_artID) REFERENCES wagon_art(wagon_artID) ON DELETE SET NULL,
+	FOREIGN KEY(fk_zugID) REFERENCES zug(zugID) ON DELETE SET NULL,
 	CHECK(letzte_wartung >= baujahr)
 );
 
@@ -181,7 +183,7 @@ CREATE TABLE wagon
 /**
 /** Table: Lokomotive
 /** Developer: if19b172, if19b205
-/** Description: Lokomotive, die einen Zug führen
+/** Description: Lokomotive, die einen Zug führt
 /**
 /**********************************************************************/
 
@@ -191,41 +193,9 @@ CREATE TABLE lokomotive
 	baujahr TIMESTAMP,
 	leistung NUMBER,
 	letzte_wartung TIMESTAMP,
+	fk_zugID NUMBER,
+	FOREIGN KEY(fk_zugID) REFERENCES zug(zugID) ON DELETE SET NULL,
 	CHECK(letzte_wartung >= baujahr)
-);
-
-/**********************************************************************/
-/**
-/** Table: Zug_hat_Wagons
-/** Developer: if19b172, if19b205
-/** Description: Zuordnungen der Wagons zu den Zügen
-/**
-/**********************************************************************/
-
-CREATE TABLE zug_hat_wagons
-(
-	fk_zugID NUMBER,
-	fk_wagonID NUMBER,
-	FOREIGN KEY(fk_zugID) REFERENCES zug(zugID) ON DELETE CASCADE,
-	FOREIGN KEY(fk_wagonID) REFERENCES wagon(wagonID) ON DELETE CASCADE,
-	CONSTRAINT zug_hat_wagons_pk PRIMARY KEY(fk_zugID, fk_wagonID)
-);
-
-/**********************************************************************/
-/**
-/** Table: Zug_hat_Lokomotiven
-/** Developer: if19b172, if19b205
-/** Description: Zuordnungen der Lokomotiven zu ihren Zügen
-/**
-/**********************************************************************/
-
-CREATE TABLE zug_hat_lokomotiven
-(
-	fk_zugID NUMBER,
-	fk_lokomotivID NUMBER,
-	FOREIGN KEY(fk_zugID) REFERENCES zug(zugID) ON DELETE CASCADE,
-	FOREIGN KEY(fk_lokomotivID) REFERENCES lokomotive(lokomotivID) ON DELETE CASCADE,
-	CONSTRAINT zug_hat_lokomotiven_pk PRIMARY KEY(fk_zugID,fk_lokomotivID)
 );
 
 /**********************************************************************/
