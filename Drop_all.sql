@@ -28,9 +28,6 @@ DELETE FROM ticket;
 DELETE FROM mehrfachticket;
 DELETE FROM one_time_ticket;
 
-DELETE FROM online_artikel;
-DELETE FROM person_hat_online_artikel;
-
 DROP SEQUENCE person_id_seq;
 DROP SEQUENCE bahnhof_id_seq;
 DROP SEQUENCE bahnsteig_id_seq;
@@ -50,7 +47,9 @@ DROP SEQUENCE verbindung_id_seq;
 DROP SEQUENCE ticket_art_id_seq;
 DROP SEQUENCE ticket_id_seq;
 
-DROP SEQUENCE artikel_id_seq;
+
+
+
 ------ DROP TABLES ------
 
 DROP TABLE person CASCADE CONSTRAINTS;
@@ -63,8 +62,6 @@ DROP TABLE lokomotive CASCADE CONSTRAINTS;
 DROP TABLE wagon_art CASCADE CONSTRAINTS;
 DROP TABLE bahnsteig CASCADE CONSTRAINTS;
 DROP TABLE zug CASCADE CONSTRAINTS;
-DROP TABLE zug_hat_lokomotiven CASCADE CONSTRAINTS;
-DROP TABLE zug_hat_wagons CASCADE CONSTRAINTS;
 DROP TABLE wartung CASCADE CONSTRAINTS;
 DROP TABLE mitarbeiter_rolle CASCADE CONSTRAINTS;
 DROP TABLE servicedesk CASCADE CONSTRAINTS;
