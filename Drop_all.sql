@@ -28,7 +28,7 @@ DELETE FROM ticket;
 DELETE FROM mehrfachticket;
 DELETE FROM one_time_ticket;
 
-DELETE FROM onlineArtikel;
+DELETE FROM online_artikel;
 DELETE FROM person_hat_online_artikel;
 
 DROP SEQUENCE person_id_seq;
@@ -78,5 +78,5 @@ DROP TABLE produkt_hat_allergen CASCADE CONSTRAINTS;
 DROP TABLE wagon_hat_produkt CASCADE CONSTRAINTS;
 DROP TABLE mehrfachticket CASCADE CONSTRAINTS;
 DROP TABLE ticket CASCADE CONSTRAINTS;
-DROP TABLE onlineArtikel CASCADE CONSTRAINTS;
+DROP TABLE online_artikel CASCADE CONSTRAINTS;
 DROP TABLE person_hat_online_artikel CASCADE CONSTRAINTS;
