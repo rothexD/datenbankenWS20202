@@ -217,12 +217,12 @@ INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Raffael Arbeiter', TO_DATE('1
 
 
 -- bahnhof
-INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Graz', 'Bahnhofsplatz 1', 8010);
-INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'HBF Wien', 'Bahnhofsplatz 1', 1100);
-INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Linz', 'Bahnhofsplatz 1', 4020);
-INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Bregenz', 'Bahnhofsplatz 1', 6900);
-INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Mistelbach', 'Bahnhofsplatz 1', 2130);
-INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Salzburg', 'Bahnhofsplatz 1', 5020);
+INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Graz', 'Bahnhofsplatz 1', 8010, 47.076668, 15.421371);
+INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'HBF Wien', 'Bahnhofsplatz 1', 1100, 48.210033, 16.363449);
+INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Linz', 'Bahnhofsplatz 1', 4020, 47.861400, 15.029853);
+INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Bregenz', 'Bahnhofsplatz 1', 6900, 47.503110, 9.747100);
+INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Mistelbach', 'Bahnhofsplatz 1', 2130, 48.567430, 16.572200);
+INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Salzburg', 'Bahnhofsplatz 1', 5020, 47.811195, 13.033229);
 
 
 
@@ -336,55 +336,35 @@ INSERT INTO wagon_art VALUES (wagon_art_id_seq.NEXTVAL,'Güterwagen',10000,0);
 INSERT INTO wagon_art VALUES (wagon_art_id_seq.NEXTVAL,'eventwagon',5,3);
 
 
-
+-- zug
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,6153-6159-4860);
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,4532-5820-1442);
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,8752-4601-9346);
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,5420-1367-4536);
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,4186-3108-9615);
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,4568-1138-4138);
 
 -- wagon
-INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2002-07-11', 'YYYY-MM-DD'),TO_DATE('2012-10-25', 'YYYY-MM-DD'),1);
-INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2014-02-12', 'YYYY-MM-DD'),TO_DATE('2015-09-04', 'YYYY-MM-DD'),4);
-INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2005-06-05', 'YYYY-MM-DD'),TO_DATE('2007-01-03', 'YYYY-MM-DD'),4);
-INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('1968-01-20', 'YYYY-MM-DD'),TO_DATE('2008-07-11', 'YYYY-MM-DD'),2);
-INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2000-11-23', 'YYYY-MM-DD'),TO_DATE('2008-09-27', 'YYYY-MM-DD'),2);
-INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2001-11-20', 'YYYY-MM-DD'),TO_DATE('2009-01-12', 'YYYY-MM-DD'),1);
-INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2012-12-30', 'YYYY-MM-DD'),TO_DATE('2013-07-24', 'YYYY-MM-DD'),1);
-INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2015-01-11', 'YYYY-MM-DD'),TO_DATE('2016-01-15', 'YYYY-MM-DD'),3);
-INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2013-12-04', 'YYYY-MM-DD'),TO_DATE('2018-08-01', 'YYYY-MM-DD'),1);
-
-
+INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2002-07-11', 'YYYY-MM-DD'),TO_DATE('2012-10-25', 'YYYY-MM-DD'),1,1);
+INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2014-02-12', 'YYYY-MM-DD'),TO_DATE('2015-09-04', 'YYYY-MM-DD'),2,1);
+INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2005-06-05', 'YYYY-MM-DD'),TO_DATE('2007-01-03', 'YYYY-MM-DD'),3,1);
+INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2012-12-30', 'YYYY-MM-DD'),TO_DATE('2013-07-24', 'YYYY-MM-DD'),4,2);
+INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2000-11-23', 'YYYY-MM-DD'),TO_DATE('2008-09-27', 'YYYY-MM-DD'),5,3);
+INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2001-11-20', 'YYYY-MM-DD'),TO_DATE('2009-01-12', 'YYYY-MM-DD'),4,4);
+INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2015-01-11', 'YYYY-MM-DD'),TO_DATE('2016-01-15', 'YYYY-MM-DD'),2,5);
+INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2013-12-04', 'YYYY-MM-DD'),TO_DATE('2018-08-01', 'YYYY-MM-DD'),1,6);
 
 
 -- lokomotive
-INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2004-10-04', 'YYYY-MM-DD'),1000,TO_DATE('2006-10-04', 'YYYY-MM-DD'));
-INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2005-02-22', 'YYYY-MM-DD'),5431,TO_DATE('2007-02-22', 'YYYY-MM-DD'));
-INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2007-07-27', 'YYYY-MM-DD'),20000,TO_DATE('2017-07-27', 'YYYY-MM-DD'));
-INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2008-03-30', 'YYYY-MM-DD'),1100,TO_DATE('2018-03-30', 'YYYY-MM-DD'));
-INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2009-02-02', 'YYYY-MM-DD'),9784,TO_DATE('2010-02-02', 'YYYY-MM-DD'));
-INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2015-08-10', 'YYYY-MM-DD'),10000,TO_DATE('2016-08-10', 'YYYY-MM-DD'));
-INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2016-11-09', 'YYYY-MM-DD'),11000,TO_DATE('2020-11-09', 'YYYY-MM-DD'));
+INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2004-10-04', 'YYYY-MM-DD'),1000,TO_DATE('2006-10-04', 'YYYY-MM-DD'),1);
+INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2005-02-22', 'YYYY-MM-DD'),5431,TO_DATE('2007-02-22', 'YYYY-MM-DD'),1);
+INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2007-07-27', 'YYYY-MM-DD'),20000,TO_DATE('2017-07-27', 'YYYY-MM-DD'),2);
+INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2008-03-30', 'YYYY-MM-DD'),1100,TO_DATE('2018-03-30', 'YYYY-MM-DD'),3);
+INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2009-02-02', 'YYYY-MM-DD'),9784,TO_DATE('2010-02-02', 'YYYY-MM-DD'),4);
+INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2015-08-10', 'YYYY-MM-DD'),10000,TO_DATE('2016-08-10', 'YYYY-MM-DD'),5);
+INSERT INTO lokomotive VALUES (lokomotive_id_seq.NEXTVAL,TO_DATE('2016-11-09', 'YYYY-MM-DD'),11000,TO_DATE('2020-11-09', 'YYYY-MM-DD'),6);
 
 
-
-
--- zug
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,61536159486);
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,453);
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,8752460193);
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,542013674);
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,41863108961544);
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,4568113841348);
-
-INSERT INTO zug_hat_lokomotiven VALUES(1,1);
-INSERT INTO zug_hat_lokomotiven VALUES(1,2);
-
-INSERT INTO zug_hat_wagons VALUES (1,4);
-INSERT INTO zug_hat_wagons VALUES (1,6);
-INSERT INTO zug_hat_wagons VALUES (1,7);
-INSERT INTO zug_hat_wagons VALUES (1,8);
-
-INSERT INTO zug_hat_lokomotiven VALUES (3,4);
-
-INSERT INTO zug_hat_wagons VALUES (3,2);
-INSERT INTO zug_hat_wagons VALUES (3,3);
-INSERT INTO zug_hat_wagons VALUES (3,9);
 
 INSERT INTO allergen  VALUES (allergen_id_seq.NEXTVAL,'Gluten','A');
 INSERT INTO allergen  VALUES (allergen_id_seq.NEXTVAL,'Krebstiere','B');
@@ -403,19 +383,13 @@ INSERT INTO produkt_hat_allergen VALUES (3,3);
 
 INSERT INTO wagon_hat_produkt VALUES (1,1);
 INSERT INTO wagon_hat_produkt VALUES (1,2);
+INSERT INTO wagon_hat_produkt VALUES (1,3);
+INSERT INTO wagon_hat_produkt VALUES (1,4);
 INSERT INTO wagon_hat_produkt VALUES (1,5);
 
-INSERT INTO wagon_hat_produkt VALUES (6,2);
-INSERT INTO wagon_hat_produkt VALUES (6,3);
-INSERT INTO wagon_hat_produkt VALUES (6,4);
-
-INSERT INTO wagon_hat_produkt VALUES (7,1);
-INSERT INTO wagon_hat_produkt VALUES (7,4);
-
-INSERT INTO wagon_hat_produkt VALUES (9,2);
-INSERT INTO wagon_hat_produkt VALUES (9,3);
-
-
+INSERT INTO wagon_hat_produkt VALUES (8,1);
+INSERT INTO wagon_hat_produkt VALUES (8,2);
+INSERT INTO wagon_hat_produkt VALUES (8,3);
 
 
 
@@ -526,8 +500,6 @@ SELECT * FROM wagon_art;
 SELECT * FROM wagon;
 SELECT * FROM lokomotive;
 SELECT * FROM zug;
-SELECT * FROM zug_hat_lokomotiven;
-SELECT * FROM zug_hat_wagons;
 SELECT * FROM allergen;
 SELECT * FROM produkt;
 SELECT * FROM produkt_hat_allergen;
