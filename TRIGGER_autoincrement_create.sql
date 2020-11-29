@@ -147,6 +147,17 @@ END;
 /
 
 
+CREATE OR REPLACE TRIGGER autoincr_artikel_id_seq
+BEFORE INSERT ON onlineArtikel
+FOR EACH ROW
+BEGIN
+  SELECT artikel_id_seq.NEXTVAL
+  INTO   :new.artikelID
+  FROM   dual;
+END;
+/
+
+
 
 BEGIN
 EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_zug_id_seq ';
@@ -167,6 +178,8 @@ EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_verbindung_id_seq';
 EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_wartung_id_seq';
 EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_ticket_art_id_seq';
 EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_ticket_id_seq';
+
+EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_artikel_id_seq';
 END;
 /
 
