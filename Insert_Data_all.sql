@@ -511,3 +511,5 @@ SELECT * FROM ticket_art;
 SELECT * FROM ticket;
 SELECT * FROM mehrfachticket;
 SELECT * FROM one_time_ticket;
+
+commit;

@@ -19,7 +19,7 @@ DECLARE
 BEGIN
 	select fk_personID,fk_ticket_artID into v_personID,v_fk_ticket_artID from ticket where ticket.ticketID = :new.fk_ticketID;
 	select punkte into punkteByTicketArt from ticket_art where ticket_artID = v_fk_ticket_artID;
-	Update kunde set punkte = punkte+punkteByTicketArt where fk_personID = v_personID;
+	Update kunde set punkte = punkte + punkteByTicketArt where fk_personID = v_personID;
 END;
 /
 begin

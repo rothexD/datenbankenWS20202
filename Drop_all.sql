@@ -26,6 +26,11 @@ DELETE FROM ticket;
 DELETE FROM mehrfachticket;
 DELETE FROM one_time_ticket;
 
+DELETE FROM online_artikel;
+DELETE FROM person_hat_online_artikel;
+
+
+
 DROP SEQUENCE person_id_seq;
 DROP SEQUENCE bahnhof_id_seq;
 DROP SEQUENCE bahnsteig_id_seq;
