@@ -451,5 +451,5 @@ CREATE TABLE person_hat_online_artikel
     gekauft_an TIMESTAMP,
     FOREIGN KEY(fk_artikelID) REFERENCES online_artikel(artikelID) ON DELETE CASCADE,
     FOREIGN KEY(fk_personID) REFERENCES person(personID) ON DELETE CASCADE,
-		CONSTRAINT person_hat_online_artikel_pk PRIMARY KEY(fk_artikelID, fk_personID)
+    CONSTRAINT person_hat_online_artikel_pk PRIMARY KEY(fk_artikelID, fk_personID)
 );
