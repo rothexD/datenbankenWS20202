@@ -13,13 +13,21 @@ BEFORE INSERT ON mehrfachticket
 FOR EACH ROW
 DECLARE
 	MaxTicketCounterReached EXCEPTION;
-	v_personID Number;
-	punkteByTicketArt Number;
-	v_fk_ticket_artID Number;
+	v_personID NUMBER;
+	punkteByTicketArt NUMBER;
+	v_fk_ticket_artID NUMBER;
+	v_geburtsdatum TIMESTAMP;
 BEGIN
-	select fk_personID,fk_ticket_artID into v_personID,v_fk_ticket_artID from ticket where ticket.ticketID = :new.fk_ticketID;
-	select punkte into punkteByTicketArt from ticket_art where ticket_artID = v_fk_ticket_artID;
-	Update kunde set punkte = punkte + (punkteByTicketArt * 5) where fk_personID = v_personID;
+	SELECT fk_personID,fk_ticket_artID INTO v_personID,v_fk_ticket_artID FROM ticket WHERE ticket.ticketID = :new.fk_ticketID;
+	SELECT punkte INTO punkteByTicketArt FROM ticket_art WHERE ticket_artID = v_fk_ticket_artID;
+	SELECT geburtsdatum INTO v_geburtsdatum FROM person WHERE personID = v_personID;
+	
+	IF EXTRACT(month FROM v_geburtsdatum) = EXTRACT(month FROM sysdate) and EXTRACT(day FROM v_geburtsdatum) = EXTRACT(month FROM sysdate) THEN
+		UPDATE kunde SET punkte = punkte + (punkteByTicketArt * 8) WHERE fk_personID = v_personID;
+		RETURN;
+	END IF;
+	UPDATE kunde SET punkte = punkte + (punkteByTicketArt * 5) WHERE fk_personID = v_personID;
+	RETURN;
 END;
 /
 begin
