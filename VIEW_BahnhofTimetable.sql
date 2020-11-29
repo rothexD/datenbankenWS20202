@@ -11,7 +11,7 @@
 CREATE OR REPLACE
 VIEW bahnhof_timetable AS
 
-SELECT bh.bahnhofID, bh.bezeichnung AS Name, bs.bezeichnung AS bahnsteig, v.fk_zugID AS zugID, v.abfahrt_uhrzeit AS Uhrzeit, 'Ankunft' AS VerbindungTyp
+SELECT bh.bahnhofID, bh.bezeichnung AS name, bs.bezeichnung AS bahnsteig, v.fk_zugID AS zugID, v.abfahrt_uhrzeit AS Uhrzeit, 'Ankunft' AS verbindungTyp
   FROM bahnsteig bs
   JOIN bahnhof bh
     ON bs.fk_bahnhofID = bh.bahnhofID
@@ -20,11 +20,11 @@ SELECT bh.bahnhofID, bh.bezeichnung AS Name, bs.bezeichnung AS bahnsteig, v.fk_z
     
 UNION
 
-SELECT bh.bahnhofID, bh.bezeichnung AS Name, bs.bezeichnung AS bahnsteig, v.fk_zugID AS zugID, v.abfahrt_uhrzeit AS Uhrzeit, 'Abfahrt' AS VerbindungTyp
+SELECT bh.bahnhofID, bh.bezeichnung AS name, bs.bezeichnung AS bahnsteig, v.fk_zugID AS zugID, v.abfahrt_uhrzeit AS uhrzeit, 'Abfahrt' AS verbindungTyp
   FROM bahnsteig bs
   JOIN bahnhof bh
     ON bs.fk_bahnhofID = bh.bahnhofID
   JOIN verbindung v
     ON v.fk_abfahrt_bahnsteig = bs.bahnsteigID
     
-ORDER BY Uhrzeit ASC;
+ORDER BY uhrzeit ASC;
