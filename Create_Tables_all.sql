@@ -147,7 +147,7 @@ CREATE TABLE zug
 /** Table: Wagon_Art
 /** Developer: if19b172, if19b205
 /** Description: Typen, die ein Wagon annehmen kann
-/**						   (Speisewagon, Businessclass-Wagon, etc.)
+/**              (Speisewagon, Businessclass-Wagon, etc.)
 /**
 /**********************************************************************/
 
@@ -255,7 +255,7 @@ CREATE TABLE verbindung
 /** Table: Wartung
 /** Developer: if19b172, if19b205
 /** Description: Wartungsarbeiten, die an einem Zug in einem Zeitfenster
-/**							 durchgeführt werden
+/**              durchgeführt werden
 /**
 /**********************************************************************/
 
@@ -321,7 +321,7 @@ CREATE TABLE ticket
 /** Table: One_Time_Ticket
 /** Developer: if19b172, if19b205
 /** Description: Tickets, die einmalig für eine Fahrt verwendet werden
-/**							 können
+/**              können
 /**
 /**********************************************************************/
 
@@ -339,7 +339,7 @@ CREATE TABLE one_time_ticket (
 /** Table: Mehrfachticket
 /** Developer: if19b172, if19b205
 /** Description: Tickets, die über einen Zeitraum hinweg verwendet
-/** 						 werden können
+/**              werden können
 /**
 /**********************************************************************/
 
@@ -371,7 +371,7 @@ CREATE TABLE allergen (
 /** Table: Produkt
 /** Developer: if19b172, if19b205
 /** Description: Verpflegung, die in einem Zug mit einem Speisewagon
-/** 						 angeboten werden
+/**              angeboten werden
 /**
 /**********************************************************************/
 
