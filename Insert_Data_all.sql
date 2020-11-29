@@ -498,12 +498,12 @@ INSERT INTO one_time_ticket VALUES (12,7,0);
 INSERT INTO one_time_ticket VALUES (13,5,0);
 
 --onlineArtikel
-INSERT INTO onlineArtikel VALUES (artikel_id_seq.NEXTVAL,'dreirad',2000,120,timestamp '2019-02-01 0:0:0.0',timestamp '2022-02-01 0:0:0.0');
-INSERT INTO onlineArtikel VALUES (artikel_id_seq.NEXTVAL,'keksdose',500,0,timestamp '2019-02-01 0:0:0.0',timestamp '2022-02-01 0:0:0.0');
-INSERT INTO onlineArtikel VALUES (artikel_id_seq.NEXTVAL,'Naeset',200,20,timestamp '2019-02-01 0:0:0.0',timestamp '2022-02-01 0:0:0.0');
-INSERT INTO onlineArtikel VALUES (artikel_id_seq.NEXTVAL,'FakeKaktus',800,5,timestamp '2019-02-01 0:0:0.0',timestamp '2022-02-01 0:0:0.0');
-INSERT INTO onlineArtikel VALUES (artikel_id_seq.NEXTVAL,'Handtuch',150,15,timestamp '2025-02-01 0:0:0.0',timestamp '2027-02-01 0:0:0.0');
-INSERT INTO onlineArtikel VALUES (artikel_id_seq.NEXTVAL,'Tragetasche',420,0,timestamp '2018-02-01 0:0:0.0',timestamp '2019-02-01 0:0:0.0');
+INSERT INTO online_artikel VALUES (artikel_id_seq.NEXTVAL,'dreirad',2000,120,timestamp '2019-02-01 0:0:0.0',timestamp '2022-02-01 0:0:0.0');
+INSERT INTO online_artikel VALUES (artikel_id_seq.NEXTVAL,'keksdose',500,0,timestamp '2019-02-01 0:0:0.0',timestamp '2022-02-01 0:0:0.0');
+INSERT INTO online_artikel VALUES (artikel_id_seq.NEXTVAL,'Naeset',200,20,timestamp '2019-02-01 0:0:0.0',timestamp '2022-02-01 0:0:0.0');
+INSERT INTO online_artikel VALUES (artikel_id_seq.NEXTVAL,'FakeKaktus',800,5,timestamp '2019-02-01 0:0:0.0',timestamp '2022-02-01 0:0:0.0');
+INSERT INTO online_artikel VALUES (artikel_id_seq.NEXTVAL,'Handtuch',150,15,timestamp '2025-02-01 0:0:0.0',timestamp '2027-02-01 0:0:0.0');
+INSERT INTO online_artikel VALUES (artikel_id_seq.NEXTVAL,'Tragetasche',420,0,timestamp '2018-02-01 0:0:0.0',timestamp '2019-02-01 0:0:0.0');
 
 --person_hat_online_artikel
 INSERT INTO person_hat_online_artikel VALUES(1,3,timestamp '2020-01-01 0:0:0.0');
