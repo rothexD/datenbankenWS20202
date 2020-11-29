@@ -52,7 +52,28 @@ DROP SEQUENCE ticket_id_seq;
 DROP SEQUENCE artikel_id_seq;
 
 
+-- Drop Indizes --
 
+DROP INDEX ind_person_name;
+DROP INDEX ind_person_plz;
+DROP INDEX ind_mitarbeiter_gehaltsstufe;
+DROP INDEX ind_mitarbeiter_rollen;
+DROP INDEX ind_bahnhof_plz;
+DROP INDEX ind_bahnsteig_bahnhof;
+DROP INDEX ind_wagon_art;
+DROP INDEX ind_wagon_zug;
+DROP INDEX ind_lokomotive_zug;
+DROP INDEX ind_verbindung_ankunft;
+DROP INDEX ind_verbindung_abfahrt;
+DROP INDEX ind_verbindung_zug;
+DROP INDEX ind_wartung_zug;
+DROP INDEX ind_servicedesk_bahnhof;
+DROP INDEX ind_ticket_art;
+DROP INDEX ind_ticket_person;
+DROP INDEX ind_ott_verbindung;
+DROP INDEX ind_produkt_allergen;
+DROP INDEX ind_wagon_produkt;
+DROP INDEX ind_artikel_person;
 
 ------ DROP TABLES ------
 
