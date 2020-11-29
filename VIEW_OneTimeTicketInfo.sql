@@ -1,6 +1,6 @@
 --*********************************************************************
 --**
---** View: OneTimeTicketInfo
+--** View: One_Time_Ticket_Info
 --** Developer: Samuel Fiedorowicz
 --** Description: Zeigt für Einmaltickets den Start- und Zielbahnhof
 --**              sowie die dazugehörigen Bahnsteige, Preis,
@@ -9,13 +9,13 @@
 --*********************************************************************
 
 CREATE OR REPLACE
-VIEW OneTimeTicketInfo AS
+VIEW one_time_ticket_info AS
 SELECT 
   t.ticketid, t.preis, t.kaufdatum, ot.already_scanned,
-  bhAbfahrt.bezeichnung AS bahnhof_abfahrt, 
-  bhAnkunft.bezeichnung AS bahnhof_ankunft,
-  bsAbfahrt.bezeichnung AS bahnsteig_abfahrt,
-  bsAnkunft.bezeichnung AS bahnsteig_ankunft, 
+  bh_abfahrt.bezeichnung AS bahnhof_abfahrt, 
+  bh_ankunft.bezeichnung AS bahnhof_ankunft,
+  bs_abfahrt.bezeichnung AS bahnsteig_abfahrt,
+  bs_ankunft.bezeichnung AS bahnsteig_ankunft, 
   v.abfahrt_uhrzeit, v.ankunft_uhrzeit
   
   FROM ticket t
@@ -23,11 +23,11 @@ SELECT
       ON ot.fk_ticketID = t.ticketID
     JOIN verbindung v
       ON ot.fk_verbindungID = v.verbindungID
-    JOIN bahnsteig bsAnkunft
-      ON v.fk_ankunft_bahnsteig = bsAnkunft.bahnsteigID
-    JOIN bahnsteig bsAbfahrt
-      ON v.fk_abfahrt_bahnsteig = bsAbfahrt.bahnsteigID
-    JOIN bahnhof bhAnkunft
-      ON bsAnkunft.fk_bahnhofID = bhAnkunft.bahnhofID
-    JOIN bahnhof bhAbfahrt
-      ON bsAbfahrt.fk_bahnhofID = bhAbfahrt.bahnhofID;
+    JOIN bahnsteig bs_ankunft
+      ON v.fk_ankunft_bahnsteig = bs_ankunft.bahnsteigID
+    JOIN bahnsteig bs_abfahrt
+      ON v.fk_abfahrt_bahnsteig = bs_abfahrt.bahnsteigID
+    JOIN bahnhof bh_ankunft
+      ON bs_ankunft.fk_bahnhofID = bh_ankunft.bahnhofID
+    JOIN bahnhof bh_abfahrt
+      ON bs_abfahrt.fk_bahnhofID = bh_abfahrt.bahnhofID;

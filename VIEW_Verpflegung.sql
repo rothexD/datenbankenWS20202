@@ -7,7 +7,7 @@
 --*********************************************************************
 
 CREATE OR REPLACE
-VIEW Verpflegung AS
+VIEW verpflegung AS
 SELECT z.*, p.name AS produkt
   FROM zug z
   JOIN zug_hat_wagons zw
