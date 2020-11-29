@@ -1,0 +1,4 @@
+CREATE OR REPLACE
+VIEW vor_24h_gekauft AS
+
+SELECT kaufdatum, ticketID FROM ticket WHERE kaufdatum >= CURRENT_TIMESTAMP - NUMTODSINTERVAL(24, 'HOUR');
