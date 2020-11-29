@@ -28,6 +28,9 @@ DELETE FROM ticket;
 DELETE FROM mehrfachticket;
 DELETE FROM one_time_ticket;
 
+DELETE FROM onlineArtikel;
+DELETE FROM person_hat_online_artikel;
+
 DROP SEQUENCE person_id_seq;
 DROP SEQUENCE bahnhof_id_seq;
 DROP SEQUENCE bahnsteig_id_seq;
@@ -47,9 +50,7 @@ DROP SEQUENCE verbindung_id_seq;
 DROP SEQUENCE ticket_art_id_seq;
 DROP SEQUENCE ticket_id_seq;
 
-
-
-
+DROP SEQUENCE artikel_id_seq;
 ------ DROP TABLES ------
 
 DROP TABLE person CASCADE CONSTRAINTS;
@@ -77,3 +78,5 @@ DROP TABLE produkt_hat_allergen CASCADE CONSTRAINTS;
 DROP TABLE wagon_hat_produkt CASCADE CONSTRAINTS;
 DROP TABLE mehrfachticket CASCADE CONSTRAINTS;
 DROP TABLE ticket CASCADE CONSTRAINTS;
+DROP TABLE onlineArtikel CASCADE CONSTRAINTS;
+DROP TABLE person_hat_online_artikel CASCADE CONSTRAINTS;
