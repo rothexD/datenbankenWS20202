@@ -292,8 +292,8 @@ CREATE TABLE servicedesk (
 
 CREATE TABLE ticket_art (
 	ticket_artID NUMBER CONSTRAINT ticket_art_pk PRIMARY KEY,
-	punkte NUMBER,
-	bezeichnung VARCHAR2(50)
+	bezeichnung VARCHAR2(50),
+	punkte NUMBER
 );
 
 /**********************************************************************/
