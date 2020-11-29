@@ -4,7 +4,7 @@
 --* Type: Before row
 --* Type Extension: insert
 --* Developer: Lukas Schweinberger
---* Description: give kunde points if he buys a ticket
+--* Description: give kunde points if he buys a ticket, additional 200 points if ticket bought on birthday
 --*
 --********************************************************************
 

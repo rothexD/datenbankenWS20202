@@ -1,10 +1,11 @@
+
 --********************************************************************
 --*
 --* Trigger: trigger_Punkte_ott
 --* Type: Before row
 --* Type Extension: insert
 --* Developer: Lukas Schweinberger
---* Description: give kunde points if he buys a ticket
+--* Description: Calculates the price for a ticket and enters it
 --*
 --********************************************************************
 
