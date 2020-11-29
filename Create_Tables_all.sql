@@ -107,7 +107,7 @@ CREATE Table bahnhof
 	bezeichnung varchar2(250),
 	adresse VARCHAR2(250),
 	fk_plz NUMBER,
-	langitude NUMBER(8, 6),
+	latitude NUMBER(8, 6),
 	longitude NUMBER(9, 6),
 	FOREIGN KEY(fk_plz) REFERENCES ort(plz) ON DELETE SET NULL
 );

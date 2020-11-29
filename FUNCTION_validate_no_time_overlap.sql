@@ -1,4 +1,15 @@
-CREATE OR REPLACE FUNCTION validate_no_time_overlap(timeA1 timestamp, timeA2 timestamp,timeB1 timestamp, timeB2 timestamp)
+--********************************************************************
+--*
+--* Function: validate_no_time_overlap
+--* Return: 0 for false, 1 for true
+--* Parameter: (timeA from, timeA to,timeB from, timeB to) simulates 2 timespanns from begin to end
+--* Developer: Lukas Schweinberger
+--* Description: validate that 2 timespanns dont overlap.
+--*
+--********************************************************************
+
+
+CREATE OR REPLACE FUNCTION validate_no_time_overlap(timeA1 TIMESTAMP, timeA2 TIMESTAMP,timeB1 TIMESTAMP, timeB2 TIMESTAMP)
 	RETURN NUMBER
 IS
 BEGIN
