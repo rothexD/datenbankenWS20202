@@ -33,7 +33,7 @@ CREATE TABLE person
 /**
 /** Table: Gehaltsstufe
 /** Developer: if19b172, if19b205
-/** Description: Gehaltsklassen in denen ein Mitarbeiter eingeordnet
+/** Description: Gehaltsklassen in welche ein Mitarbeiter eingeordnet
 /**              werden kann
 /**
 /**********************************************************************/
