@@ -229,18 +229,18 @@ INSERT INTO bahnhof VALUES (bahnhof_id_seq.NEXTVAL, 'BF Salzburg', 'Bahnhofsplat
 
 
 -- kunde
-INSERT INTO kunde VALUES (1, 'herbert@gmail.com', 4030465715644984, 1000000);
-INSERT INTO kunde VALUES (2, 'susi@gmail.com', 4030465715644984, 1000001);
-INSERT INTO kunde VALUES (3, 'josef@gmail.com', 4030465715644984, 1000002);
-INSERT INTO kunde VALUES (4, 'philipp@gmail.com', 4030465715644984, 1000003);
-INSERT INTO kunde VALUES (5, 'jakob@gmail.com', 4030465715644984, 1000004);
-INSERT INTO kunde VALUES (6, 'sieglinde@gmail.com', 4030465715644984, 1000005);
-INSERT INTO kunde VALUES (7, 'martina@gmail.com', 4030465715644984, 1000006);
-INSERT INTO kunde VALUES (8, 'eveline@gmail.com', 4030465715644984, 1000007);
-INSERT INTO kunde VALUES (9, 'johanna@gmail.com', 4030465715644984, 1000008);
-INSERT INTO kunde VALUES (10, 'barbara@gmail.com', 4030465715644984, 1000009);
-INSERT INTO kunde VALUES (11, 'tanja@gmail.com', 4030465715644984, 1000010);
-INSERT INTO kunde VALUES (12, 'lisa@gmail.com', 4030465715644984, 1000011);
+INSERT INTO kunde VALUES (1, 'herbert@gmail.com', 4030465715644984, 1000000,20);
+INSERT INTO kunde VALUES (2, 'susi@gmail.com', 4030465715644984, 1000001,10);
+INSERT INTO kunde VALUES (3, 'josef@gmail.com', 4030465715644984, 1000002,0);
+INSERT INTO kunde VALUES (4, 'philipp@gmail.com', 4030465715644984, 1000003,0);
+INSERT INTO kunde VALUES (5, 'jakob@gmail.com', 4030465715644984, 1000004,0);
+INSERT INTO kunde VALUES (6, 'sieglinde@gmail.com', 4030465715644984, 1000005,0);
+INSERT INTO kunde VALUES (7, 'martina@gmail.com', 4030465715644984, 1000006,0);
+INSERT INTO kunde VALUES (8, 'eveline@gmail.com', 4030465715644984, 1000007,0);
+INSERT INTO kunde VALUES (9, 'johanna@gmail.com', 4030465715644984, 1000008,0);
+INSERT INTO kunde VALUES (10, 'barbara@gmail.com', 4030465715644984, 1000009,0);
+INSERT INTO kunde VALUES (11, 'tanja@gmail.com', 4030465715644984, 1000010,0);
+INSERT INTO kunde VALUES (12, 'lisa@gmail.com', 4030465715644984, 1000011,0);
 
 
 
@@ -456,12 +456,12 @@ INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 5, 16, 4, (TO_TIMESTAM
 
 
 -- ticketarten
-INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Standardkarte');
-INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Studentenkarte');
-INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Seniorenkarte');
-INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Kinderkarte');
-INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Gruppenkarte');
-INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Schuelerkarte');
+INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Standardkarte',200);
+INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Studentenkarte',150);
+INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Seniorenkarte',50);
+INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Kinderkarte',100);
+INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Gruppenkarte',300);
+INSERT INTO ticket_art VALUES (ticket_art_id_seq.NEXTVAL, 'Schuelerkarte',100);
 
 -- tickets
 INSERT INTO ticket VALUES (ticket_id_seq.NEXTVAL, 1, 1, 10, TO_DATE('10.10.2020', 'DD.MM.YYYY'));
