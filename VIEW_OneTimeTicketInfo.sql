@@ -1,6 +1,6 @@
 --*********************************************************************
 --**
---** View: OneTimeTicketInfo
+--** View: One_Time_Ticket_Info
 --** Developer: Samuel Fiedorowicz
 --** Description: Zeigt für Einmaltickets den Start- und Zielbahnhof
 --**              sowie die dazugehörigen Bahnsteige, Preis,
