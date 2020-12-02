@@ -1,15 +1,18 @@
 --********************************************************************
 --*
---* Function: validate_no_time_overlap
+--* Function: f_validate_no_time_overlap
 --* Return: 0 for false, 1 for true
---* Parameter: (timeA from, timeA to,timeB from, timeB to) simulates 2 timespanns from begin to end
+--* Parameter:
+--* 	timeA1: Start of timespann 1
+--* 	timeA2: END of timespann 1
+--*		timeB1: Start of timespann 2
+--*		timeB2: END of timespann 2
 --* Developer: Lukas Schweinberger
 --* Description: validate that 2 timespanns dont overlap.
---*
 --********************************************************************
 
 
-CREATE OR REPLACE FUNCTION validate_no_time_overlap(timeA1 TIMESTAMP, timeA2 TIMESTAMP,timeB1 TIMESTAMP, timeB2 TIMESTAMP)
+CREATE OR REPLACE FUNCTION f_validate_no_time_overlap(timeA1 TIMESTAMP, timeA2 TIMESTAMP,timeB1 TIMESTAMP, timeB2 TIMESTAMP)
 	RETURN NUMBER
 IS
 BEGIN
@@ -34,6 +37,6 @@ END;
 /
 
 begin
-	execute immediate 'DROP FUNCTION validate_no_time_overlap';
+	execute immediate 'DROP FUNCTION f_validate_no_time_overlap';
 end;
 /
