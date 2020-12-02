@@ -19,9 +19,8 @@ DECLARE
 BEGIN
 	SELECT sum(kapazitaet) INTO n_MaxCapacityOfTrain 
 	FROM verbindung
-		JOIN zug_hat_wagons ON zug_hat_wagons.fk_zugID = verbindung.fk_zugID 
-		JOIN wagon ON zug_hat_wagons.fk_wagonID = wagon.wagonID
-		JOIN wagon_art ON wagon_art.wagon_artID = wagon.wagonID;
+		JOIN wagon ON wagon.fk_zugID = verbindung.fk_zugID 
+		JOIN wagon_art ON wagon_art.wagon_artID = wagon.wagonID where verbindung.verbindungID = :new.fk_verbindungID;
 	
 	SELECT COUNT(*) INTO n_CurrentTicketAmmount FROM one_time_ticket WHERE fk_verbindungID = :new.fk_verbindungID;
 	n_AdjustedMaxValue := n_MaxCapacityOfTrain * 0.8;
