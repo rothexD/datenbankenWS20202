@@ -160,7 +160,6 @@ END;
 
 CREATE OR REPLACE PROCEDURE sp_DeleteMitarbeiter(v_personID Number)
 AS
-	v_newPersonID Number;
 BEGIN
 	SAVEPOINT DeleteMitarbeiter;
 	DELETE FROM Mitarbeiter where fk_personID = v_personID;
@@ -172,14 +171,13 @@ EXCEPTION
 			ROLLBACK TO DeleteMitarbeiter;		
 			return;	
 		end if;
-  	Raise_Application_Error(-20018,'Other Error in CreateMitarbeiter');
+  	Raise_Application_Error(-20018,'Other Error in DeleteMitarbeiter');
   	ROLLBACK TO DeleteMitarbeiter;
 END;
 /
 
 CREATE OR REPLACE PROCEDURE sp_CreateKunde(NameOf Varchar2,Geburtsdatum timestamp,Adresse VARCHAR2,PLZ Number,Email VARCHAR2,Kreditkartenummer Number)
 AS
-	v_newPersonID Number;
 BEGIN
 	SAVEPOINT CreateKunde;
 	select person_id_seq.NEXTVAL into v_newPersonID from dual;
@@ -187,7 +185,7 @@ BEGIN
 	INSERT INTO Kunde VALUES(v_newPersonID,Email,Kreditkartenummer,v_newPersonID + 10000,0);
 EXCEPTION
 	WHEN DUP_VAL_ON_INDEX THEN
-  	Raise_Application_Error(-20019,'CreateMitarbeiter was not unique');
+  	Raise_Application_Error(-20019,'CreateKunde was not unique');
   	ROLLBACK TO CreateKunde;
 	WHEN OTHERS THEN
 		if sqlcode = -2291 then
@@ -195,14 +193,13 @@ EXCEPTION
 			ROLLBACK TO CreateKunde;		
 			return;	
 		end if;
-  	Raise_Application_Error(-20021,'Other Error in CreateMitarbeiter');
+  	Raise_Application_Error(-20021,'Other Error in CreateKunde');
   	ROLLBACK TO CreateKunde;
 END;
 /
 
 CREATE OR REPLACE PROCEDURE sp_DeleteKunde(v_personID Number)
 AS
-	v_newPersonID Number;
 BEGIN
 	SAVEPOINT DeleteKunde;
 	DELETE FROM Kunde where fk_personID = v_personID;
@@ -214,15 +211,48 @@ EXCEPTION
 			ROLLBACK TO DeleteKunde;		
 			return;	
 		end if;
-  	Raise_Application_Error(-20023,'Other Error in CreateMitarbeiter');
+  	Raise_Application_Error(-20023,'Other Error in DeleteKunde');
   	ROLLBACK TO DeleteKunde;
 END;
 /
 
+CREATE OR REPLACE PROCEDURE sp_CreateTicketArt(bezeichnung Varchar2,Punkte Number)
+AS
+BEGIN
+  SAVEPOINT CreateTicketArt;
+	Insert into ticket_art values(null,bezeichnung,Punkte);
+EXCEPTION
+  WHEN DUP_VAL_ON_INDEX THEN
+  	Raise_Application_Error(-20024,'CreateTicketArt was not unique');
+  	ROLLBACK TO CreateTicketArt;
+	WHEN OTHERS THEN
+  	Raise_Application_Error(-20025,'Other Error in CreateTicketArt');
+  	ROLLBACK TO CreateTicketArt;
+END;
+/
 
-
-
-
+CREATE OR REPLACE PROCEDURE sp_BuyOneTimeTicket(PersonID number,ticketArtId number,verbindungID number)
+AS
+newTicket_id Number;
+BEGIN
+  savepoint BuyOneTimeTicket;
+  newTicket_id := ticket_id_seq.NEXTVAL;
+	Insert into ticket values(newTicket_id,ticketArtId,PersonID,null,sysdate);
+	insert into one_time_ticket values(newTicket_id,verbindungID,0);
+EXCEPTION
+  WHEN DUP_VAL_ON_INDEX THEN
+  	Raise_Application_Error(-20024,'BuyOneTimeTicket was not unique');
+  	ROLLBACK TO BuyOneTimeTicket;
+	WHEN OTHERS THEN
+	  if sqlcode = -2291 then
+			Raise_Application_Error(-20020,'Foreign key does not exist');
+			ROLLBACK TO CreateKunde;		
+	    return;
+	  end if;
+  	Raise_Application_Error(-20025,'Other Error in BuyOneTimeTicket');
+  	ROLLBACK TO BuyOneTimeTicket;
+END;
+/
 
 
 
