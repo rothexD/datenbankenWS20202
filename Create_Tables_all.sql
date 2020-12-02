@@ -88,7 +88,7 @@ CREATE TABLE mitarbeiter
 CREATE TABLE kunde
 (
 	fk_personID NUMBER NOT NULL CONSTRAINT kunde_pk PRIMARY KEY,
-	kreditkartennummer NUMBER NOT NULL UNIQUE,
+	kreditkartennummer NUMBER NOT NULL,
 	kundennummer NUMBER NOT NULL UNIQUE,
 	punkte NUMBER DEFAULT 0,
 	FOREIGN KEY(fk_personID) REFERENCES person(personID) ON DELETE CASCADE
