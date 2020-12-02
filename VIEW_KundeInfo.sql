@@ -11,7 +11,7 @@ CREATE OR REPLACE
 VIEW kunde_info AS
     SELECT
         p.personid, p.name, o.plz, o.ort, p.geburtsdatum, p.strasse_hausnummer,
-        k.email, k.kreditkartennummer, k.kundennummer
+        p.email, k.kreditkartennummer, k.kundennummer
     FROM kunde k
         JOIN person p
         ON k.fk_personid = p.personid

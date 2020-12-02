@@ -17,7 +17,7 @@ VIEW mitarbeiter_info AS
         ON m.fk_personid = p.personid
         JOIN ort o
         ON p.fk_plz = o.plz
-        JOIN mitarbeiter_rollen r
+        JOIN mitarbeiter_rolle r
         ON m.fk_rollenid = r.rollenid
         JOIN gehaltsstufe g
         ON m.fk_gehaltsstufeid = g.gehaltsstufeid;
