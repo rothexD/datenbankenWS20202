@@ -15,11 +15,11 @@ CREATE OR REPLACE FUNCTION f_try_login(v_email VARCHAR2,v_passwort VARCHAR2)
 IS
 	n_count NUMBER;
 BEGIN
-	select count(*) into n_count from person where email = v_email and passwort = v_passwort;
-	if n_count = 1 then
-		return 1;
-	end if;
-	return 0;	
+	SELECT COUNT(*) INTO n_count FROM person WHERE email = v_email AND passwort = v_passwort;
+	IF n_count = 1 THEN
+		RETURN 1;
+	END IF;
+	RETURN 0;	
 END;
 /
 
