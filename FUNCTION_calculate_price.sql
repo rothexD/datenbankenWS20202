@@ -1,4 +1,15 @@
-CREATE OR REPLACE FUNCTION calculate_price(i_bahnhofID_abfahrt IN NUMBER, i_bahnhofID_ankunft IN NUMBER)
+--********************************************************************
+--**
+--** Function: f_calculate_price
+--** In: i_bahnhofID_abfahrt and i_bahnhofID_ankunft
+--** Returns: price for one route
+--** Developer: Elisabeth Glatz
+--** Description: calculates the the (linear) distance between two train stations and calculates the price for the calculated route
+--*
+--********************************************************************
+
+
+CREATE OR REPLACE FUNCTION f_calculate_price(i_bahnhofID_abfahrt IN NUMBER, i_bahnhofID_ankunft IN NUMBER)
 	RETURN NUMBER
 IS
 
@@ -59,10 +70,10 @@ END;
 
 
  
-select calculate_price(4, 6) from dual; -- salzburg bis bregenz: 67,50€ (vergleichswert)
-select calculate_price(2, 5) from dual; -- wien bis mistelbach: 12€
-select calculate_price(2, 6) from dual; -- wien bis salzburg: 56,80€
-select calculate_price(2, 4) from dual; -- bregenz bis wien: 80€
-select calculate_price(1, 2) from dual; -- graz bis wien: 40€
-select calculate_price(3, 2) from dual; -- linz bis wien: 38,50€
+select f_calculate_price(4, 6) from dual; -- salzburg bis bregenz: 67,50€ (vergleichswert)
+select f_calculate_price(2, 5) from dual; -- wien bis mistelbach: 12€
+select f_calculate_price(2, 6) from dual; -- wien bis salzburg: 56,80€
+select f_calculate_price(2, 4) from dual; -- bregenz bis wien: 80€
+select f_calculate_price(1, 2) from dual; -- graz bis wien: 40€
+select f_calculate_price(3, 2) from dual; -- linz bis wien: 38,50€
 	
