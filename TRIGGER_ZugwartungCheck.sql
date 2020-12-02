@@ -33,7 +33,7 @@ BEGIN
 END;
 /
 BEGIN
-EXECUTE IMMEDIATE 'DROP TRIGGER trigger_zug_wartung_check'  
+EXECUTE IMMEDIATE 'DROP TRIGGER trigger_zug_wartung_check';
 END;
 /
 
