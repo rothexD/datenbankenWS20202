@@ -1,6 +1,6 @@
 /**********************************************************************/
 /**
-/** Procedure: sp_book_later_train
+/** Procedure: sp_book_alternative_train
 /** In: n_ticketID - id of the tick to rebook
 /** Developer: Samuel Fiedorowicz
 /** Description: Rebook the ticket to the next connection with the same
@@ -9,7 +9,7 @@
 /**********************************************************************/
 
 CREATE OR REPLACE
-PROCEDURE sp_book_later_train(n_ticketID IN NUMBER)
+PROCEDURE sp_book_alternative_train(n_ticketID IN NUMBER)
 AS
     n_bahnhof_abfahrt NUMBER;
     n_bahnhof_ankunft NUMBER;
