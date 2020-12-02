@@ -9,7 +9,7 @@
 CREATE OR REPLACE
 VIEW verpflegung AS
 SELECT z.*, p.name AS produkt
-  FROM zug z
+FROM zug z
   JOIN zug_hat_wagons zw
     ON zw.fk_zugID = z.zugID
   JOIN wagon w
