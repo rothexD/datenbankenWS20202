@@ -1,6 +1,6 @@
 --********************************************************************
 --*
---* Trigger: trigger_buy_date_one_time_ticket
+--* Trigger: tr_br_buy_date_one_t_ticket
 --* Type: Before row
 --* Type Extension: insert
 --* Developer: Lukas Schweinberger
@@ -9,23 +9,23 @@
 --*
 --********************************************************************
 
-CREATE OR REPLACE TRIGGER trigger_buy_date_one_t_ticket
+CREATE OR REPLACE TRIGGER tr_br_buy_date_one_t_ticket
 BEFORE INSERT ON one_time_ticket 
 FOR EACH ROW
 DECLARE
-	TrainHasWartungShedule Number DEFAULT 0;
-	v_ABfahrtsUhrzeit timestamp;
-	v_kaufdatum timestamp;
-	TicketDateException EXCEPTION;
+	n_TrainHasWartungShedule NUMBER DEFAULT 0;
+	n_ABfahrtsUhrzeit TIMESTAMP;
+	n_kaufdatum TIMESTAMP;
+	e_TicketDateException EXCEPTION;
 BEGIN
-	SELECT abfahrt_uhrzeit INTO v_AbfahrtsUhrzeit FROM verbindung WHERE verbindungID = :new.fk_verbindungID;
-	SELECT kaufdatum INTO v_kaufdatum FROM ticket WHERE ticketID = :new.fk_ticketID;
-	IF v_kaufdatum > v_AbfahrtsUhrzeit - interval '2' MINUTE THEN
-	RAISE TicketDateException;
+	SELECT abfahrt_uhrzeit INTO n_ABfahrtsUhrzeit FROM verbindung WHERE verbindungID = :NEW.fk_verbindungID;
+	SELECT kaufdatum INTO n_kaufdatum FROM ticket WHERE ticketID = :NEW.fk_ticketID;
+	IF n_kaufdatum > n_ABfahrtsUhrzeit - interval '2' MINUTE THEN
+	RAISE e_TicketDateException;
 	END IF;
 END;
 /
 BEGIN
-EXECUTE IMMEDIATE 'DROP TRIGGER trigger_buy_date_one_t_ticket';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_br_buy_date_one_t_ticket';
 END;
 /
