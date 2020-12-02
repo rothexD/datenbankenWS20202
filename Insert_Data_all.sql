@@ -192,25 +192,25 @@ INSERT INTO ort VALUES (5020, 'Salzburg');
 
 -- personen (kunden und mitarbeiter)
 -- kunden
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Herbert Hinterholz', TO_DATE('03.04.1993','DD.MM.YYYY'), 'Holzweg 5', 1010);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Susi Sorglos', TO_DATE('03.04.1993','DD.MM.YYYY'), 'Wollzeile 12', 1010);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Josef Brot', TO_DATE('13.05.1994','DD.MM.YYYY'), 'Burgring 2', 1020);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Philipp Philipovic', TO_DATE('03.07.1992','DD.MM.YYYY'), 'Samgasse 1', 1020);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Jakob Jagd', TO_DATE('03.07.1965','DD.MM.YYYY'), 'Jakobsweg 5', 1030);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Sieglinde Lindenbaum', TO_DATE('13.08.1990','DD.MM.YYYY'), 'Nikoloweg 1', 1040);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Martina Hinterholz', TO_DATE('08.09.2000','DD.MM.YYYY'), 'Krampusgasse 525', 8010);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Eveline Hinterholz', TO_DATE('13.10.1993','DD.MM.YYYY'), 'Schottentor 25', 1010);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Johanna Ananas', TO_DATE('03.11.1993','DD.MM.YYYY'), 'Rennweg 15', 1090);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Barbara Lindefrau', TO_DATE('14.12.2000','DD.MM.YYYY'), 'Zwerggasse 15', 1010);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Tanja Müller', TO_DATE('24.01.1975','DD.MM.YYYY'), 'Dresdner Strasse 1', 1040);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Lisa Ziegelstein', TO_DATE('13.03.1960','DD.MM.YYYY'), 'Am Berg 1', 8010);
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Herbert Hinterholz', TO_DATE('03.04.1993','DD.MM.YYYY'), 'Holzweg 5', 1010, 'holz@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Susi Sorglos', TO_DATE('03.04.1993','DD.MM.YYYY'), 'Wollzeile 12', 1010, 'sorglos@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Josef Brot', TO_DATE('13.05.1994','DD.MM.YYYY'), 'Burgring 2', 1020, 'brot@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Philipp Philipovic', TO_DATE('03.07.1992','DD.MM.YYYY'), 'Samgasse 1', 1020, 'philipovic@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Jakob Jagd', TO_DATE('03.07.1965','DD.MM.YYYY'), 'Jakobsweg 5', 1030, 'jagd@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Sieglinde Lindenbaum', TO_DATE('13.08.1990','DD.MM.YYYY'), 'Nikoloweg 1', 1040, 'lindenbaum@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Martina Hinterholz', TO_DATE('08.09.2000','DD.MM.YYYY'), 'Krampusgasse 525', 8010, 'holz1@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Eveline Hinterholz', TO_DATE('13.10.1993','DD.MM.YYYY'), 'Schottentor 25', 1010, 'holz2@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Johanna Ananas', TO_DATE('03.11.1993','DD.MM.YYYY'), 'Rennweg 15', 1090, 'ananas@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Barbara Lindefrau', TO_DATE('14.12.2000','DD.MM.YYYY'), 'Zwerggasse 15', 1010, 'lindefrau@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Tanja Müller', TO_DATE('24.01.1975','DD.MM.YYYY'), 'Dresdner Strasse 1', 1040, 'mueller@mail.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Lisa Ziegelstein', TO_DATE('13.03.1960','DD.MM.YYYY'), 'Am Berg 1', 8010, 'ziegelstein@mail.com', '-');
 
 -- mitarbeiter
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Peter Bahnfreund', TO_DATE('11.03.1960','DD.MM.YYYY'), 'Heumarkt 13', 1010);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Zohan Zugfan', TO_DATE('13.03.1980','DD.MM.YYYY'), 'Nordpol 3', 1020);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Michael Gleisbauer', TO_DATE('13.03.1967','DD.MM.YYYY'), 'Teuergasse 1', 1190);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Johann Putz', TO_DATE('13.03.1990','DD.MM.YYYY'), 'Kebabweg 22', 1100);
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Raffael Arbeiter', TO_DATE('13.03.1920','DD.MM.YYYY'), 'Landberg 4', 1030);
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Peter Bahnfreund', TO_DATE('11.03.1960','DD.MM.YYYY'), 'Heumarkt 13', 1010, 'bahnfreund@chipotle.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Zohan Zugfan', TO_DATE('13.03.1980','DD.MM.YYYY'), 'Nordpol 3', 1020, 'zugfan@chipotle.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Michael Gleisbauer', TO_DATE('13.03.1967','DD.MM.YYYY'), 'Teuergasse 1', 1190, 'gleisbauer@chipotle.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Johann Putz', TO_DATE('13.03.1990','DD.MM.YYYY'), 'Kebabweg 22', 1100, 'putz@chipotle.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Raffael Arbeiter', TO_DATE('13.03.1920','DD.MM.YYYY'), 'Landberg 4', 1030, 'arbeiter@chipotle.com', '-');
 
 
 
