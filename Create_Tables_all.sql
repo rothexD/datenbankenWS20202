@@ -88,7 +88,6 @@ CREATE TABLE mitarbeiter
 CREATE TABLE kunde
 (
 	fk_personID NUMBER NOT NULL CONSTRAINT kunde_pk PRIMARY KEY,
-	email VARCHAR2(250) NOT NULL,
 	kreditkartennummer NUMBER NOT NULL UNIQUE,
 	kundennummer NUMBER NOT NULL UNIQUE,
 	punkte NUMBER DEFAULT 0,
