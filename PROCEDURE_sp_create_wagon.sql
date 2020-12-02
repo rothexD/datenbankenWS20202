@@ -16,8 +16,8 @@ PROCEDURE sp_create_wagon(n_zugID          IN zug.zugID%TYPE,
                           d_baujahr        IN wagon.baujahr%TYPE,
                           d_letzte_wartung IN wagon.letzte_wartung%TYPE)
 AS
-e_integrity EXCEPTION;
-PRAGMA EXCEPTION_INIT(e_integrity, -2291);
+    e_integrity EXCEPTION;
+    PRAGMA EXCEPTION_INIT(e_integrity, -2291);
 
 BEGIN
   SAVEPOINT before_create_wagon;
