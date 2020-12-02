@@ -16,8 +16,8 @@ PROCEDURE sp_create_lokomotive(n_zugID          IN lokomotive.fk_zugID%TYPE,
                                n_leistung       IN lokomotive.leistung%TYPE,
                                d_letzte_wartung IN lokomotive.letzte_wartung%TYPE)
 AS
-    e_integrity EXCEPTION;
-    PRAGMA EXCEPTION_INIT(e_integrity, -2291);
+  e_integrity EXCEPTION;
+  PRAGMA EXCEPTION_INIT(e_integrity, -2291);
 
 BEGIN
   SAVEPOINT before_create_lokomotive;

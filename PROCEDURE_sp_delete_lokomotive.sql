@@ -10,8 +10,8 @@
 CREATE OR REPLACE
 PROCEDURE sp_delete_lokomotive(n_lokomotiveID lokomotive.lokomotivID%TYPE)
 AS
-    e_integrity EXCEPTION;
-    PRAGMA EXCEPTION_INIT(e_integrity, -2291);
+  e_integrity EXCEPTION;
+  PRAGMA EXCEPTION_INIT(e_integrity, -2291);
 
 BEGIN
   SAVEPOINT before_delete_lokomotive;
