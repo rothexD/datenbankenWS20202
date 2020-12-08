@@ -11,15 +11,15 @@
 CREATE OR REPLACE
 VIEW one_time_ticket_info AS
 SELECT
-  p.PERSONID, t.ticketid,
-  ta.BEZEICHNUNG AS TicketTyp,
+  p.personID, t.ticketid,
+  ta.bezeichnung AS TicketTyp,
   t.preis, t.kaufdatum, ot.already_scanned,
   bh_abfahrt.bezeichnung AS bahnhof_abfahrt,
   bh_ankunft.bezeichnung AS bahnhof_ankunft,
   bs_abfahrt.bezeichnung AS bahnsteig_abfahrt,
   bs_ankunft.bezeichnung AS bahnsteig_ankunft,
   v.abfahrt_uhrzeit, v.ankunft_uhrzeit
-  
+
   FROM ticket t
     JOIN one_time_ticket ot
       ON ot.fk_ticketID = t.ticketID
