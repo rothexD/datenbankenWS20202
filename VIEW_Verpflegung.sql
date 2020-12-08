@@ -6,6 +6,7 @@
 --**
 
 --*********************************************************************
+
 CREATE OR REPLACE
 VIEW verpflegung AS
 SELECT z.*, p.name AS produkt
@@ -15,5 +16,5 @@ FROM zug z
   JOIN wagon_hat_produkt wv
     ON wv.fk_wagonID = w.wagonID
   JOIN produkt p
-    ON wv.fk_produktID = p.produktID
+    ON p.produktID = wv.fk_produktID
 ORDER BY z.zugID;
