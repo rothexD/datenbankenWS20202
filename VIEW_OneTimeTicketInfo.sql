@@ -12,7 +12,7 @@ CREATE OR REPLACE
 VIEW one_time_ticket_info AS
 SELECT
   p.personID, t.ticketid,
-  ta.bezeichnung AS TicketTyp,
+  ta.bezeichnung AS ticket_typ,
   t.preis, t.kaufdatum, ot.already_scanned,
   bh_abfahrt.bezeichnung AS bahnhof_abfahrt,
   bh_ankunft.bezeichnung AS bahnhof_ankunft,
