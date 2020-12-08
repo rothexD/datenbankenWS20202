@@ -400,7 +400,7 @@ n_newTicket_id NUMBER;
 BEGIN
   SAVEPOINT BuyOneTimeTicket;
   select ticket_id_seq.NEXTVAL into n_newTicket_id from dual;
-	INSERT INTO ticket values(n_newTicket_id,n_ticketArtId,n_PersonID,null,sysdate);
+	INSERT INTO ticket values(n_newTicket_id,n_ticketArtId,n_PersonID,-1,sysdate);
 	INSERT INTO one_time_ticket values(n_newTicket_id,n_verbindungID,0);
 EXCEPTION
   WHEN DUP_VAL_ON_INDEX THEN
@@ -429,13 +429,13 @@ END;
 /**		gueltigBis TIMESTAMP: Bis wann das ticket gueltig ist
 /**********************************************************************/
 
-CREATE OR REPLACE PROCEDURE sp_buy_mehrfach_tickt(n_PersonID NUMBER,n_ticketArtId NUMBER,gueltigVon TIMESTAMP,gueltigBis TIMESTAMP)
+CREATE OR REPLACE PROCEDURE sp_buy_mehrfach_tickt(n_PersonID NUMBER,n_ticketArtId NUMBER,gueltigVon TIMESTAMP,gueltigBis TIMESTAMP,preis NUMBER)
 AS
 n_newTicket_id NUMBER;
 BEGIN
   SAVEPOINT buy_mehrfach_tickt;
   select ticket_id_seq.NEXTVAL into n_newTicket_id from dual;
-	INSERT INTO ticket values(n_newTicket_id,n_ticketArtId,n_PersonID,null,sysdate);
+	INSERT INTO ticket values(n_newTicket_id,n_ticketArtId,n_PersonID,preis,sysdate);
 	INSERT INTO mehrfachticket values(n_newTicket_id,gueltigVon,gueltigBis);
 EXCEPTION
   WHEN DUP_VAL_ON_INDEX THEN
