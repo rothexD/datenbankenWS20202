@@ -1,5 +1,70 @@
 CREATE USER datenbankprojekt IDENTIFIED BY password;
 GRANT CONNECT TO datenbankprojekt;
 
------ now grant execute on all stored procedures here in form of  "GRANT EXECUTE ON b.procedure_name TO a"  while b is the user that has the procedure stored.
- 
+GRANT SELECT ON system.allergen_info TO datenbankprojekt;
+GRANT SELECT ON system.bahnhof_info TO datenbankprojekt;
+GRANT SELECT ON system.bahnhof_timetable TO datenbankprojekt;
+GRANT SELECT ON system.bahnsteig_info TO datenbankprojekt;
+GRANT SELECT ON system.gehaltsstufe_info TO datenbankprojekt;
+GRANT SELECT ON system.kunde_info TO datenbankprojekt;
+GRANT SELECT ON system.lokomotive_info TO datenbankprojekt;
+GRANT SELECT ON system.mehrfach_ticket_info TO datenbankprojekt;
+GRANT SELECT ON system.mitarbeiter_info TO datenbankprojekt;
+GRANT SELECT ON system.mitarbeiterrolle_info TO datenbankprojekt;
+GRANT SELECT ON system.one_time_ticket_info TO datenbankprojekt;
+GRANT SELECT ON system.online_artikel_info TO datenbankprojekt;
+GRANT SELECT ON system.ort_info TO datenbankprojekt;
+GRANT SELECT ON system.produkt_allergen_info TO datenbankprojekt;
+GRANT SELECT ON system.produkt_info TO datenbankprojekt;
+GRANT SELECT ON system.servicedesk_info TO datenbankprojekt;
+GRANT SELECT ON system.ticketart_info TO datenbankprojekt;
+GRANT SELECT ON system.vor_24h_gekauft TO datenbankprojekt;
+GRANT SELECT ON system.verbindung_info TO datenbankprojekt;
+GRANT SELECT ON system.verfuegbare_artikel TO datenbankprojekt;
+GRANT SELECT ON system.verpflegung TO datenbankprojekt;
+GRANT SELECT ON system.verwendbare_tickets TO datenbankprojekt;
+GRANT SELECT ON system.verwendete_tickets TO datenbankprojekt;
+GRANT SELECT ON system.wagonart_info TO datenbankprojekt;
+GRANT SELECT ON system.wagon_info TO datenbankprojekt;
+GRANT SELECT ON system.wartung_info TO datenbankprojekt;
+GRANT SELECT ON system.zug_info TO datenbankprojekt;
+
+GRANT EXECUTE ON system.f_average_ticket_price TO datenbankprojekt;
+GRANT EXECUTE ON system.f_calculate_price TO datenbankprojekt;
+GRANT EXECUTE ON system.f_get_next_arrival TO datenbankprojekt;
+GRANT EXECUTE ON system.f_get_next_departures TO datenbankprojekt;
+GRANT EXECUTE ON system.f_get_personid TO datenbankprojekt;
+GRANT EXECUTE ON system.f_get_role TO datenbankprojekt;
+GRANT EXECUTE ON system.f_total_expenditure TO datenbankprojekt;
+GRANT EXECUTE ON system.f_try_login TO datenbankprojekt;
+GRANT EXECUTE ON system.f_validate_no_time_overlap TO datenbankprojekt;
+
+GRANT EXECUTE ON system.sp_create_mitarbeiter_rolle TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_mitarbeiter_rolle TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_CreateGehaltsStufe TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_gehalts_stufe TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_online_artikel TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_update_artikel_price TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_artikel TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_ort TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_ort TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_mitarbeiter TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_mitarbeiter TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_kunde TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_kunde TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_ticket_art TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_buy_one_time_ticket TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_buy_mehrfach_tickt TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_book_alternative_train TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_allergen TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_lokomotive TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_product TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_wagon TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_zug TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_allergen TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_lokomotive TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_product TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_wagon TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_zug TO datenbankprojekt;
+>>>>>>> 365f5e3003a4bade087a82a0d8cd8fea239c46a0
+
