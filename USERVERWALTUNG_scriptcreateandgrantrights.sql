@@ -66,5 +66,4 @@ GRANT EXECUTE ON system.sp_delete_lokomotive TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_delete_product TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_delete_wagon TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_delete_zug TO datenbankprojekt;
->>>>>>> 365f5e3003a4bade087a82a0d8cd8fea239c46a0
 

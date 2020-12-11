@@ -210,7 +210,7 @@ INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Peter Bahnfreund', TO_DATE('1
 INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Zohan Zugfan', TO_DATE('13.03.1980','DD.MM.YYYY'), 'Nordpol 3', 1020, 'zugfan@chipotle.com', '-');
 INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Michael Gleisbauer', TO_DATE('13.03.1967','DD.MM.YYYY'), 'Teuergasse 1', 1190, 'gleisbauer@chipotle.com', '-');
 INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Johann Putz', TO_DATE('13.03.1990','DD.MM.YYYY'), 'Kebabweg 22', 1100, 'putz@chipotle.com', '-');
-INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Raffael Arbeiter', TO_DATE('13.03.1920','DD.MM.YYYY'), 'Landberg 4', 1030, 'arbeiter@chipotle.com', '-');
+INSERT INTO person VALUES (person_id_seq.NEXTVAL, 'Raffael Arbeiter', TO_DATE('13.03.1920','DD.MM.YYYY'), 'Landberg 4', 1030, 'arbeiter@chipotle.com', 'N6y62HLflNkRU/EBs/IPHCasKJGnMi/DhadDA2vGcRQ=');
 
 
 
