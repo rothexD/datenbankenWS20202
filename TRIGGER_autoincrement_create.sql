@@ -1,4 +1,4 @@
-CREATE OR REPLACE TRIGGER autoincr_zug_id_seq 
+CREATE OR REPLACE TRIGGER tr_autoincr_zug_id_seq 
 BEFORE INSERT ON zug
 FOR EACH ROW
 BEGIN
@@ -10,7 +10,7 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE TRIGGER autoincr_wagon_art_id_seq 
+CREATE OR REPLACE TRIGGER tr_autoincr_wagon_art_id_seq 
 BEFORE INSERT ON wagon_art
 FOR EACH ROW
 BEGIN
@@ -22,7 +22,7 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE TRIGGER autoincr_wagon_id_seq 
+CREATE OR REPLACE TRIGGER tr_autoincr_wagon_id_seq 
 BEFORE INSERT ON wagon 
 FOR EACH ROW
 BEGIN
@@ -33,7 +33,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_lokomotive_id_seq
+CREATE OR REPLACE TRIGGER tr_autoincr_lokomotive_id_seq
 BEFORE INSERT ON lokomotive
 FOR EACH ROW
 BEGIN
@@ -44,7 +44,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_allergen_id_seq
+CREATE OR REPLACE TRIGGER tr_autoincr_allergen_id_seq
 BEFORE INSERT ON allergen 
 FOR EACH ROW
 BEGIN
@@ -55,7 +55,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_produkt_id_seq 
+CREATE OR REPLACE TRIGGER tr_autoincr_produkt_id_seq 
 BEFORE INSERT ON produkt 
 FOR EACH ROW
 BEGIN
@@ -67,7 +67,7 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE TRIGGER autoincr_person_id_seq 
+CREATE OR REPLACE TRIGGER tr_autoincr_person_id_seq 
 BEFORE INSERT ON person 
 FOR EACH ROW
 BEGIN
@@ -78,7 +78,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_bahnhof_id_seq 
+CREATE OR REPLACE TRIGGER tr_autoincr_bahnhof_id_seq 
 BEFORE INSERT ON bahnhof
 FOR EACH ROW
 BEGIN
@@ -89,7 +89,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_bahnsteig_id_seq
+CREATE OR REPLACE TRIGGER tr_autoincr_bahnsteig_id_seq
 BEFORE INSERT ON bahnsteig
 FOR EACH ROW
 BEGIN
@@ -100,7 +100,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_mrolle_id_seq 
+CREATE OR REPLACE TRIGGER tr_autoincr_mrolle_id_seq 
 BEFORE INSERT ON mitarbeiter_rolle 
 FOR EACH ROW
 BEGIN
@@ -111,7 +111,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_gehaltsstufe_id_seq 
+CREATE OR REPLACE TRIGGER tr_autoincr_gstufe_id_seq 
 BEFORE INSERT ON gehaltsstufe 
 FOR EACH ROW
 BEGIN
@@ -122,7 +122,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_servicedesk_id_seq
+CREATE OR REPLACE TRIGGER tr_autoincr_servicedesk_id_seq
 BEFORE INSERT ON servicedesk 
 FOR EACH ROW
 BEGIN
@@ -133,7 +133,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_verbindung_id_seq
+CREATE OR REPLACE TRIGGER tr_autoincr_verbindung_id_seq
 BEFORE INSERT ON verbindung 
 FOR EACH ROW
 BEGIN
@@ -144,7 +144,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_wartung_id_seq
+CREATE OR REPLACE TRIGGER tr_autoincr_wartung_id_seq
 BEFORE INSERT ON wartung 
 FOR EACH ROW
 BEGIN
@@ -155,7 +155,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_ticket_art_id_seq
+CREATE OR REPLACE TRIGGER tr_autoincr_ticket_art_id_seq
 BEFORE INSERT ON ticket_art 
 FOR EACH ROW
 BEGIN
@@ -166,7 +166,7 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_ticket_id_seq
+CREATE OR REPLACE TRIGGER tr_autoincr_ticket_id_seq
 BEFORE INSERT ON ticket 
 FOR EACH ROW
 BEGIN
@@ -177,8 +177,8 @@ BEGIN
 	END IF;
 END;
 /
-CREATE OR REPLACE TRIGGER autoincr_artikel_id_seq
-BEFORE INSERT ON onlineArtikel
+CREATE OR REPLACE TRIGGER tr_autoincr_artikel_id_seq
+BEFORE INSERT ON online_artikel
 FOR EACH ROW
 BEGIN
 	IF :new.artikelID IS NULL THEN	
@@ -192,26 +192,26 @@ END;
 
 
 BEGIN
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_zug_id_seq ';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_wagon_art_id_seq';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_wagon_id_seq ';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_lokomotive_id_seq';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_allergen_id_seq';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_produkt_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_zug_id_seq ';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_wagon_art_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_wagon_id_seq ';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_lokomotive_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_allergen_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_produkt_id_seq';
 
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_person_id_seq';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_bahnhof_id_seq';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_bahnsteig_id_seq';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_mrolle_id_seq ';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_gehaltsstufe_id_seq';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_servicedesk_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_person_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_bahnhof_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_bahnsteig_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_mrolle_id_seq ';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_gstufe_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_servicedesk_id_seq';
 
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_verbindung_id_seq';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_wartung_id_seq';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_ticket_art_id_seq';
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_ticket_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_verbindung_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_wartung_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_ticket_art_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_ticket_id_seq';
 
-EXECUTE IMMEDIATE 'DROP TRIGGER autoincr_artikel_id_seq';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_autoincr_artikel_id_seq';
 END;
 /
 

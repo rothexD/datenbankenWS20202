@@ -1,6 +1,6 @@
 --********************************************************************
 --*
---* Trigger: tr_br_zug_wartung_check
+--* Trigger: tr_br_i_zug_wartung_check
 --* Type: Before row
 --* Type Extension: insert
 --* Developer: Lukas Schweinberger
@@ -8,24 +8,24 @@
 --*
 --********************************************************************
 
-CREATE OR REPLACE TRIGGER tr_br_zug_wartung_check 
+CREATE OR REPLACE TRIGGER tr_br_i_zug_wartung_check 
 BEFORE INSERT ON verbindung
 FOR EACH ROW
 DECLARE
-	n_TrainHasWartungShedule Number DEFAULT 0;
-	BeginWartungDate timestamp;
-	EndWartungDate timestamp;
+	n_trainHasWartungShedule NUMBER DEFAULT 0;
+	t_beginWartungDate TIMESTAMP;
+	t_endWartungDate TIMESTAMP;
 	e_wartungviolation EXCEPTION;
-	CURSOR cur_HasWartungSheduled IS SELECT start_wartung,ende_wartung FROM wartung WHERE fk_zugID = :new.fk_zugID;
-	n_bool Number;
+	CURSOR hasWartungSheduled_cur IS SELECT start_wartung,ende_wartung FROM wartung WHERE fk_zugID = :new.fk_zugID;
+	n_bool NUMBER;
 BEGIN
-	SELECT Count(*) INTO n_TrainHasWartungShedule FROM wartung WHERE fk_zugID = :new.fk_zugID;
-	IF n_TrainHasWartungShedule > 0 THEN
-		FOR v_result in	cur_HasWartungSheduled
+	SELECT Count(*) INTO n_trainHasWartungShedule FROM wartung WHERE fk_zugID = :new.fk_zugID;
+	IF n_trainHasWartungShedule > 0 THEN
+		FOR v_result in	hasWartungSheduled_cur
 		LOOP
-			n_bool := validate_no_time_overlap(v_result.start_wartung,v_result.ende_wartung,:NEW.abfahrt_uhrzeit,:NEW.ankunft_uhrzeit);
+			n_bool := f_validate_no_time_overlap(v_result.start_wartung,v_result.ende_wartung,:new.abfahrt_uhrzeit,:new.ankunft_uhrzeit);
 			IF n_bool =0 THEN
-		  	raise e_wartungviolation;
+		  	RAISE e_wartungviolation;
 			END IF;
 		END LOOP;
 		RETURN;
@@ -33,7 +33,7 @@ BEGIN
 END;
 /
 BEGIN
-EXECUTE IMMEDIATE 'DROP TRIGGER tr_br_zug_wartung_check';
+EXECUTE IMMEDIATE 'DROP TRIGGER tr_br_i_zug_wartung_check';
 END;
 /
 

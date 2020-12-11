@@ -1,7 +1,7 @@
 --********************************************************************
 --**
 --** Function: f_calculate_price
---** In: i_bahnhofID_abfahrt and i_bahnhofID_ankunft
+--** In: n_bahnhofID_abfahrt and n_bahnhofID_ankunft
 --** Returns: price for one route
 --** Developer: Elisabeth Glatz
 --** Description: calculates the the (linear) distance between two train stations and calculates the price for the calculated route
@@ -9,7 +9,7 @@
 --********************************************************************
 
 
-CREATE OR REPLACE FUNCTION f_calculate_price(i_bahnhofID_abfahrt IN NUMBER, i_bahnhofID_ankunft IN NUMBER)
+CREATE OR REPLACE FUNCTION f_calculate_price(n_bahnhofID_abfahrt IN NUMBER, n_bahnhofID_ankunft IN NUMBER)
 	RETURN NUMBER
 IS
 
@@ -28,7 +28,7 @@ BEGIN
 	SELECT latitude, longitude 
 		INTO n_bhf_abfahrt_long, n_bhf_abfahrt_lat
 	FROM bahnhof 
-		WHERE bahnhofID = i_bahnhofID_abfahrt;
+		WHERE bahnhofID = n_bahnhofID_abfahrt;
 	
 	dbms_output.put_line('Longitude Abfahrtsbahnhof:' || n_bhf_abfahrt_long);
 	dbms_output.put_line('Latitude Abfahrtsbahnhof:' || n_bhf_abfahrt_lat);
@@ -36,7 +36,7 @@ BEGIN
 	SELECT latitude, longitude 
 		INTO n_bhf_ankunft_long, n_bhf_ankunft_lat 
 	FROM bahnhof 
-		WHERE bahnhofID = i_bahnhofID_ankunft;
+		WHERE bahnhofID = n_bahnhofID_ankunft;
 	
 	dbms_output.put_line('Longitude Ankunftsbahnhof:' || n_bhf_ankunft_long);
 	dbms_output.put_line('Latitude Ankunftsbahnhof:' || n_bhf_ankunft_lat);
@@ -70,10 +70,10 @@ END;
 
 
  
-select f_calculate_price(4, 6) from dual; -- salzburg bis bregenz: 67,50€ (vergleichswert)
-select f_calculate_price(2, 5) from dual; -- wien bis mistelbach: 12€
-select f_calculate_price(2, 6) from dual; -- wien bis salzburg: 56,80€
-select f_calculate_price(2, 4) from dual; -- bregenz bis wien: 80€
-select f_calculate_price(1, 2) from dual; -- graz bis wien: 40€
-select f_calculate_price(3, 2) from dual; -- linz bis wien: 38,50€
+SELECT f_calculate_price(4, 6) FROM dual; -- salzburg bis bregenz: 67,50€ (vergleichswert)
+SELECT f_calculate_price(2, 5) FROM dual; -- wien bis mistelbach: 12€
+SELECT f_calculate_price(2, 6) FROM dual; -- wien bis salzburg: 56,80€
+SELECT f_calculate_price(2, 4) FROM dual; -- bregenz bis wien: 80€
+SELECT f_calculate_price(1, 2) FROM dual; -- graz bis wien: 40€
+SELECT f_calculate_price(3, 2) FROM dual; -- linz bis wien: 38,50€
 	

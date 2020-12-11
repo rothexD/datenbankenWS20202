@@ -23,7 +23,7 @@ BEGIN
 END;
 /
 
-begin
-	execute immediate 'DROP FUNCTION f_try_login';
-end;
+BEGIN
+	EXECUTE IMMEDIATE 'DROP FUNCTION f_try_login';
+END;
 /

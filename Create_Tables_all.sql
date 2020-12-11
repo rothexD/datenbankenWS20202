@@ -1,7 +1,7 @@
 /**********************************************************************/
 /**
 /** Table: Ort
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Name und PLZ aller Orte für die eine Adresse hinterlegt ist
 /**
 /**********************************************************************/
@@ -14,7 +14,7 @@ CREATE TABLE ort (
 /**********************************************************************/
 /**
 /** Table: Person
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Personen, die in Verbindung mit Chipotle stehen
 /**
 /**********************************************************************/
@@ -34,7 +34,7 @@ CREATE TABLE person
 /**********************************************************************/
 /**
 /** Table: Gehaltsstufe
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Gehaltsklassen in welche ein Mitarbeiter eingeordnet
 /**              werden kann
 /**
@@ -48,7 +48,7 @@ CREATE TABLE gehaltsstufe (
 /**********************************************************************/
 /**
 /** Table: Mitarbeiter_Rolle
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Funktionen, die ein Mitarbeiter, annehmen kann
 /**
 /**********************************************************************/
@@ -61,7 +61,7 @@ CREATE TABLE mitarbeiter_rolle (
 /**********************************************************************/
 /**
 /** Table: Mitarbeiter
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Personen, die für Chipotle tätig sind
 /**
 /**********************************************************************/
@@ -80,7 +80,7 @@ CREATE TABLE mitarbeiter
 /**********************************************************************/
 /**
 /** Table: Kunde
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Personen, die sich bei Chipotle registriert haben
 /**
 /**********************************************************************/
@@ -97,7 +97,7 @@ CREATE TABLE kunde
 /**********************************************************************/
 /**
 /** Table: Bahnhof
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Bahnhofsstationen, Name, Location
 /**
 /**********************************************************************/
@@ -116,7 +116,7 @@ CREATE Table bahnhof
 /**********************************************************************/
 /**
 /** Table: Bahnsteig
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Bahnsteige in einem Bahnhof
 /**
 /**********************************************************************/
@@ -132,7 +132,7 @@ CREATE TABLE bahnsteig
 /**********************************************************************/
 /**
 /** Table: Zug
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Züge, die sich zwischen Bahnhöfen bewegen
 /**
 /**********************************************************************/
@@ -146,7 +146,7 @@ CREATE TABLE zug
 /**********************************************************************/
 /**
 /** Table: Wagon_Art
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Typen, die ein Wagon annehmen kann
 /**              (Speisewagon, Businessclass-Wagon, etc.)
 /**
@@ -163,7 +163,7 @@ CREATE TABLE wagon_art
 /**********************************************************************/
 /**
 /** Table: Wagon
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Wagone, die an einem Zug hängen
 /**
 /**********************************************************************/
@@ -183,7 +183,7 @@ CREATE TABLE wagon
 /**********************************************************************/
 /**
 /** Table: Lokomotive
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Lokomotive, die einen Zug führt
 /**
 /**********************************************************************/
@@ -202,7 +202,7 @@ CREATE TABLE lokomotive
 /**********************************************************************/
 /**
 /** Table: Verbindung
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Strecke, die ein Zug in einem Zeitfenster fährt
 /**
 /**********************************************************************/
@@ -224,7 +224,7 @@ CREATE TABLE verbindung
 /**********************************************************************/
 /**
 /** Table: Wartung
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Wartungsarbeiten, die an einem Zug in einem Zeitfenster
 /**              durchgeführt werden
 /**
@@ -242,7 +242,7 @@ CREATE TABLE wartung (
 /**********************************************************************/
 /**
 /** Table: ServiceDesk
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Schalter, die an einem Bahnhof existieren können
 /**
 /**********************************************************************/
@@ -257,7 +257,7 @@ CREATE TABLE servicedesk (
 /**********************************************************************/
 /**
 /** Table: Ticket_Art
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Tickettypen wie Studentenkarten, Seniorenkarten, etc.
 /**
 /**********************************************************************/
@@ -271,7 +271,7 @@ CREATE TABLE ticket_art (
 /**********************************************************************/
 /**
 /** Table: Ticket
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Gekaufte Tickets, die einer Person und einer Verbindung
 /**              zugeordnet sind
 /**
@@ -291,7 +291,7 @@ CREATE TABLE ticket
 /**********************************************************************/
 /**
 /** Table: One_Time_Ticket
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Tickets, die einmalig für eine Fahrt verwendet werden
 /**              können
 /**
@@ -309,7 +309,7 @@ CREATE TABLE one_time_ticket (
 /**********************************************************************/
 /**
 /** Table: Mehrfachticket
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Tickets, die über einen Zeitraum hinweg verwendet
 /**              werden können
 /**
@@ -327,7 +327,7 @@ CREATE TABLE mehrfachticket
 /**********************************************************************/
 /**
 /** Table: Allergen
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Allergene, die in einem Produkt (Verpflegung)
 /**              enthalten sind
 /**
@@ -342,7 +342,7 @@ CREATE TABLE allergen (
 /**********************************************************************/
 /**
 /** Table: Produkt
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Verpflegung, die in einem Zug mit einem Speisewagon
 /**              angeboten werden
 /**
@@ -357,7 +357,7 @@ CREATE TABLE produkt (
 /**********************************************************************/
 /**
 /** Table: Produkt_hat_Allergen
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Zuordnung der Allergene zu einem Produkt
 /**
 /**********************************************************************/
@@ -374,7 +374,7 @@ CREATE TABLE produkt_hat_allergen
 /**********************************************************************/
 /**
 /** Table: Wagon_hat_Produkt
-/** Developer: if19b172, if19b205
+/** Developer: Elisabeth Glatz, Lukas Schweinberger
 /** Description: Zuordnung der Produkte zu den (Speise-)Wagons, die
 /**              dieses Produkt anbieten
 /**

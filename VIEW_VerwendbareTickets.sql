@@ -14,4 +14,4 @@ ON t.ticketid = ot.fk_ticketid
 LEFT JOIN mehrfachticket mt
 ON t.ticketid = mt.fk_ticketid
 WHERE kaufdatum >= CURRENT_TIMESTAMP OR (gueltig_bis > CURRENT_TIMESTAMP AND gueltig_ab < CURRENT_TIMESTAMP)
-ORDER BY t.ticketid asc;
+ORDER BY t.ticketid ASC;

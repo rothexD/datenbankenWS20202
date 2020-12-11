@@ -11,7 +11,7 @@ CREATE OR REPLACE
 VIEW mitarbeiter_info AS
     SELECT
         p.personid, p.name, o.plz, o.ort, p.geburtsdatum, p.strasse_hausnummer,
-        g.gehalt, r.bezeichnung as rollebezeichnung, m.sozialversicherungsnummer
+        g.gehalt, r.bezeichnung AS rollebezeichnung, m.sozialversicherungsnummer
     FROM mitarbeiter m
         JOIN person p
         ON m.fk_personid = p.personid

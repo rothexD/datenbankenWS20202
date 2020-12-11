@@ -13,7 +13,7 @@ CREATE OR REPLACE FUNCTION f_average_ticket_price RETURN NUMBER IS
 	n_avg_preis NUMBER;
 	
 BEGIN
-SELECT avg(preis)
+SELECT AVG(preis)
 INTO n_avg_preis
 FROM ticket t
   LEFT JOIN one_time_ticket ot ON t.ticketid = ot.fk_ticketid

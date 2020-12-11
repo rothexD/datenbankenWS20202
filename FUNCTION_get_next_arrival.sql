@@ -38,4 +38,4 @@ END;
 
 
 
-select f_get_next_arrival (2) from dual;
+SELECT f_get_next_arrival (2) FROM dual;
