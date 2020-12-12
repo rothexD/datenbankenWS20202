@@ -396,7 +396,7 @@ CREATE TABLE wagon_hat_produkt
 /**********************************************************************/
 /**
 /** Table: Online_Artikel
-/** Developer: if19b169
+/** Developer: Samuel Fiedorowicz
 /** Description: Artikel, die Kunden im Austausch gegen Kundenpunte
 /**              im Chipotle-Webshop kaufen können
 /**
@@ -416,7 +416,7 @@ CREATE TABLE online_artikel
 /**********************************************************************/
 /**
 /** Table: Person_Hat_Online_Artikel
-/** Developer: if19b169
+/** Developer: Samuel Fiedorowicz
 /** Description: Zuordnung welche Kunden, welche Artikel gekauft haben
 /**
 /**********************************************************************/
@@ -919,12 +919,12 @@ INSERT INTO wagon_art VALUES (wagon_art_id_seq.NEXTVAL,'eventwagon',5,3);
 
 
 -- zug
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,6153-6159-4860);
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,4532-5820-1442);
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,8752-4601-9346);
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,5420-1367-4536);
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,4186-3108-9615);
-INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,4568-1138-4138);
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,'6153-6159-4860');
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,'4532-5820-1442');
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,'8752-4601-9346');
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,'5420-1367-4536');
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,'4186-3108-9615');
+INSERT INTO zug VALUES (zug_id_seq.NEXTVAL,'4568-1138-4138');
 
 -- wagon
 INSERT INTO wagon VALUES (wagon_id_seq.NEXTVAL,TO_DATE('2002-07-11', 'YYYY-MM-DD'),TO_DATE('2012-10-25', 'YYYY-MM-DD'),1,1);
@@ -1951,14 +1951,14 @@ END;
 
 /**********************************************************************/
 /**
-/** Procedure: sp_delete_mitarbeiter_rolle
+/** Procedure: sp_create_gehaltsstufe
 /** Developer: Lukas Schweinberger
-/** Description: löscht eine mitarbeiter rolle
+/** Description: erstellt eine mitarbeiter rolle
 /** Variable:
 /**		n_gehalt NUMBER: gehalt as float für die neue stufe
 /**********************************************************************/
 
-CREATE OR REPLACE PROCEDURE sp_CreateGehaltsStufe (n_gehalt NUMBER)
+CREATE OR REPLACE PROCEDURE sp_create_gehaltsstufe (n_gehalt NUMBER)
 AS
 BEGIN
 SAVEPOINT CreateCreateGehaltsStufe;
@@ -1975,14 +1975,14 @@ END;
 
 /**********************************************************************/
 /**
-/** Procedure: sp_delete_gehalts_stufe
+/** Procedure: sp_delete_gehaltsstufe
 /** Developer: Lukas Schweinberger
-/** Description: löscht eine mitarbeiter rolle
+/** Description: löscht eine gehaltsstufe
 /** Variable:
 /**		n_gehaltID NUMBER: id,primary key, loescht gehaltstufe mit dieser id
 /**********************************************************************/
 
-CREATE OR REPLACE PROCEDURE sp_delete_gehalts_stufe (n_gehaltID NUMBER)
+CREATE OR REPLACE PROCEDURE sp_delete_gehaltsstufe (n_gehaltID NUMBER)
 AS
 BEGIN
 SAVEPOINT DeleteGehaltsStufe;
@@ -2011,7 +2011,7 @@ CREATE OR REPLACE PROCEDURE sp_create_online_artikel(v_Bezeichnung VARCHAR2,n_Pu
 AS
 BEGIN
 	SAVEPOINT CreateOnlineArtikel;
-	INSERT INTO online_artikel values(null,v_Bezeichnung,n_Punktekosten,n_Zusaetzlichekosten,VerfügbarVon,VerfügbarBis);
+	INSERT INTO online_artikel VALUES(NULL,v_Bezeichnung,n_Punktekosten,n_Zusaetzlichekosten,VerfügbarVon,VerfügbarBis);
 EXCEPTION
 	WHEN DUP_VAL_ON_INDEX THEN
   	Raise_Application_Error(-20007,'CreateOnlineArtikel was not unique');
@@ -2037,15 +2037,15 @@ CREATE OR REPLACE PROCEDURE sp_update_artikel_price (n_ArtikelID NUMBER,n_Preis 
 AS
 	v_sqlbuilder VARCHAR2(500);
 BEGIN
-	IF n_Preis is null and n_Punkte is null THEN
+	IF n_Preis IS NULL AND n_Punkte IS NULL THEN
 		RETURN;
 	END IF;
 	SAVEPOINT UpdateOnArtikePrice;
 	v_sqlbuilder := 'update online_artikel set ';	
-	IF n_Preis = null THEN
+	IF n_Preis = NULL THEN
 		v_sqlbuilder := v_sqlbuilder || ' preis = ' || n_Preis;
 	END IF;
-	IF n_Punkte = null THEN
+	IF n_Punkte = NULL THEN
 		v_sqlbuilder := v_sqlbuilder || ' punktekosten = '||n_Punkte;
 	END IF;
 	v_sqlbuilder := v_sqlbuilder || ' where aritkelID = '||n_ArtikelID;
@@ -2181,8 +2181,8 @@ CREATE OR REPLACE PROCEDURE sp_delete_mitarbeiter(n_personID NUMBER)
 AS
 BEGIN
 	SAVEPOINT DeleteMitarbeiter;
-	DELETE FROM Mitarbeiter where fk_personID = n_personID;
-	DELETE FROM Person where personID = n_personID;
+	DELETE FROM Mitarbeiter WHERE fk_personID = n_personID;
+	DELETE FROM Person WHERE personID = n_personID;
 EXCEPTION
 	WHEN OTHERS THEN
 		IF SQLCODE = -2292 THEN
@@ -2246,8 +2246,8 @@ CREATE OR REPLACE PROCEDURE sp_delete_kunde(n_personID NUMBER)
 AS
 BEGIN
 	SAVEPOINT DeleteKunde;
-	DELETE FROM Kunde where fk_personID = n_personID;
-	DELETE FROM Person where personID = n_personID;
+	DELETE FROM Kunde WHERE fk_personID = n_personID;
+	DELETE FROM Person WHERE personID = n_personID;
 EXCEPTION
 	WHEN OTHERS THEN
 		IF SQLCODE = -2292 THEN
@@ -2275,7 +2275,7 @@ CREATE OR REPLACE PROCEDURE sp_create_ticket_art(v_bezeichnung VARCHAR2,n_Punkte
 AS
 BEGIN
   SAVEPOINT CreateTicketArt;
-	INSERT INTO ticket_art values(null,v_bezeichnung,n_Punkte);
+	INSERT INTO ticket_art VALUES(NULL,v_bezeichnung,n_Punkte);
 EXCEPTION
   WHEN DUP_VAL_ON_INDEX THEN
   	Raise_Application_Error(-20024,'CreateTicketArt was not unique');
@@ -2290,7 +2290,7 @@ END;
 /**
 /** Procedure: sp_buy_one_time_ticket
 /** Developer: Lukas Schweinberger
-/** Description: erstellt eine neue ticket art
+/** Description: erstellt einen one-time-ticket kauf
 /** Variable:
 /**		n_PersonID NUMBER: zu welcher perosn das ticket gehoert
 /**		n_ticketArtId NUMBER: art des tickets
@@ -2302,9 +2302,9 @@ AS
 n_newTicket_id NUMBER;
 BEGIN
   SAVEPOINT BuyOneTimeTicket;
-  select ticket_id_seq.NEXTVAL into n_newTicket_id from dual;
-	INSERT INTO ticket values(n_newTicket_id,n_ticketArtId,n_PersonID,-1,sysdate);
-	INSERT INTO one_time_ticket values(n_newTicket_id,n_verbindungID,0);
+  select ticket_id_seq.NEXTVAL INTO n_newTicket_id FROM dual;
+	INSERT INTO ticket VALUES(n_newTicket_id,n_ticketArtId,n_PersonID,-1,SYSDATE);
+	INSERT INTO one_time_ticket VALUES(n_newTicket_id,n_verbindungID,0);
 EXCEPTION
   WHEN DUP_VAL_ON_INDEX THEN
   	Raise_Application_Error(-20024,'BuyOneTimeTicket was not unique');
@@ -2322,9 +2322,9 @@ END;
 
 /**********************************************************************/
 /**
-/** Procedure: sp_buy_one_time_ticket
+/** Procedure: sp_buy_mehrfach_ticket
 /** Developer: Lukas Schweinberger
-/** Description: erstellt eine neue ticket art
+/** Description: erstellt einen mehrfach-ticket kauf
 /** Variable:
 /**		n_PersonID NUMBER: zu welcher perosn das ticket gehoert
 /**		n_ticketArtId NUMBER: art des tickets
@@ -2332,14 +2332,14 @@ END;
 /**		gueltigBis TIMESTAMP: Bis wann das ticket gueltig ist
 /**********************************************************************/
 
-CREATE OR REPLACE PROCEDURE sp_buy_mehrfach_tickt(n_PersonID NUMBER,n_ticketArtId NUMBER,gueltigVon TIMESTAMP,gueltigBis TIMESTAMP,preis NUMBER)
+CREATE OR REPLACE PROCEDURE sp_buy_mehrfach_ticket(n_PersonID NUMBER,n_ticketArtId NUMBER,gueltigVon TIMESTAMP,gueltigBis TIMESTAMP,preis NUMBER)
 AS
 n_newTicket_id NUMBER;
 BEGIN
   SAVEPOINT buy_mehrfach_tickt;
-  select ticket_id_seq.NEXTVAL into n_newTicket_id from dual;
-	INSERT INTO ticket values(n_newTicket_id,n_ticketArtId,n_PersonID,preis,sysdate);
-	INSERT INTO mehrfachticket values(n_newTicket_id,gueltigVon,gueltigBis);
+  select ticket_id_seq.NEXTVAL INTO n_newTicket_id FROM dual;
+	INSERT INTO ticket VALUES(n_newTicket_id,n_ticketArtId,n_PersonID,preis,SYSDATE);
+	INSERT INTO mehrfachticket VALUES(n_newTicket_id,gueltigVon,gueltigBis);
 EXCEPTION
   WHEN DUP_VAL_ON_INDEX THEN
   	Raise_Application_Error(-20024,'BuyOneTimeTicket was not unique');
@@ -3194,8 +3194,8 @@ GRANT EXECUTE ON system.f_validate_no_time_overlap TO datenbankprojekt;
 
 GRANT EXECUTE ON system.sp_create_mitarbeiter_rolle TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_delete_mitarbeiter_rolle TO datenbankprojekt;
-GRANT EXECUTE ON system.sp_CreateGehaltsStufe TO datenbankprojekt;
-GRANT EXECUTE ON system.sp_delete_gehalts_stufe TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_create_gehaltsstufe TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_delete_gehaltsstufe TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_create_online_artikel TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_update_artikel_price TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_delete_artikel TO datenbankprojekt;
@@ -3207,7 +3207,7 @@ GRANT EXECUTE ON system.sp_create_kunde TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_delete_kunde TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_create_ticket_art TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_buy_one_time_ticket TO datenbankprojekt;
-GRANT EXECUTE ON system.sp_buy_mehrfach_tickt TO datenbankprojekt;
+GRANT EXECUTE ON system.sp_buy_mehrfach_ticket TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_book_alternative_train TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_create_allergen TO datenbankprojekt;
 GRANT EXECUTE ON system.sp_create_lokomotive TO datenbankprojekt;

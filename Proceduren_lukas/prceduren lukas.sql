@@ -343,8 +343,8 @@ CREATE OR REPLACE PROCEDURE sp_delete_kunde(n_personID NUMBER)
 AS
 BEGIN
 	SAVEPOINT DeleteKunde;
-	DELETE FROM Kunde where fk_personID = n_personID;
-	DELETE FROM Person where personID = n_personID;
+	DELETE FROM Kunde WHERE fk_personID = n_personID;
+	DELETE FROM Person WHERE personID = n_personID;
 EXCEPTION
 	WHEN OTHERS THEN
 		IF SQLCODE = -2292 THEN
@@ -372,7 +372,7 @@ CREATE OR REPLACE PROCEDURE sp_create_ticket_art(v_bezeichnung VARCHAR2,n_Punkte
 AS
 BEGIN
   SAVEPOINT CreateTicketArt;
-	INSERT INTO ticket_art values(null,v_bezeichnung,n_Punkte);
+	INSERT INTO ticket_art VALUES(NULL,v_bezeichnung,n_Punkte);
 EXCEPTION
   WHEN DUP_VAL_ON_INDEX THEN
   	Raise_Application_Error(-20024,'CreateTicketArt was not unique');
