@@ -1,3 +1,12 @@
+--********************************************************************
+--*
+--* Trigger: tr_autoincr_name_id_seq
+--* Type: Before row
+--* Type Extension: insert
+--* Developer: Lukas Schweinberger
+--* Description: Takes care of the continuation of IDs that are used as primary keys and increments it by 1
+--*
+--********************************************************************
 CREATE OR REPLACE TRIGGER tr_autoincr_zug_id_seq 
 BEFORE INSERT ON zug
 FOR EACH ROW

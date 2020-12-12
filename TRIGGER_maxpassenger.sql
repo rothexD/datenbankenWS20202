@@ -4,7 +4,7 @@
 --* Type: Before row
 --* Type Extension: insert
 --* Developer: Lukas Schweinberger
---* Description: CHeck if max onetimetickets is smaller than traincapacity -25%
+--* Description: Checks if a one time ticket can be bought on the connection or if the train is full. Takes 25% of the tickets and reserves them for standing customers
 --*
 --********************************************************************
 
