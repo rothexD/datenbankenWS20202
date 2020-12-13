@@ -2235,7 +2235,7 @@ END;
 
 /**********************************************************************/
 /**
-/** Procedure: sp_create_kunde
+/** Procedure: sp_delete_kunde
 /** Developer: Lukas Schweinberger
 /** Description: legt einen kunden
 /** Variable:
