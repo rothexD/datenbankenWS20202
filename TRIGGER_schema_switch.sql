@@ -7,7 +7,7 @@
 --*
 --********************************************************************
 
-CREATE OR REPLACE TRIGGER schema_switch
+CREATE OR REPLACE TRIGGER tr_al_d_schema_switch
 AFTER LOGON ON DATABASE
 BEGIN
     IF user = 'DATENBANKPROJEKT' THEN
@@ -16,4 +16,4 @@ BEGIN
 END;
 /
 
---drop trigger schema_switch;
+--drop trigger tr_al_d_schema_switch;
