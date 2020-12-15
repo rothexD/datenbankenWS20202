@@ -988,24 +988,24 @@ INSERT INTO wartung VALUES (wartung_id_seq.NEXTVAL, (TO_TIMESTAMP('2020-11-25 10
 
 -- verbindungen
 -- Wien - Graz (von Wien Bahnsteig A nach Graz Bahnsteig C)
-INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 6, 4, 1, (TO_TIMESTAMP('2020-11-26 10:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-11-26 12:30', 'YYYY-MM-DD HH24:MI')));
+INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 6, 4, 1, (TO_TIMESTAMP('2020-12-14 10:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-12-14 12:30', 'YYYY-MM-DD HH24:MI')));
 -- Graz - Wien (von Graz Bahnsteig C nach Wien Bahnsteig A)
-INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 4, 6, 1, (TO_TIMESTAMP('2020-11-26 13:30', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-11-26 15:00', 'YYYY-MM-DD HH24:MI')));
+INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 4, 6, 1, (TO_TIMESTAMP('2020-12-14 13:30', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-12-14 15:00', 'YYYY-MM-DD HH24:MI')));
 
 -- Wien - Linz (von Wien Bahnsteig A nach Linz Bahnsteig B)
-INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 4, 8, 2, (TO_TIMESTAMP('2020-11-26 08:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-11-26 09:30', 'YYYY-MM-DD HH24:MI')));
+INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 4, 8, 2, (TO_TIMESTAMP('2020-12-14 08:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-12-14 09:30', 'YYYY-MM-DD HH24:MI')));
 -- Linz - Wien (von Linz Bahnsteig B nach Wien Bahnsteig C)
-INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 8, 4, 2, (TO_TIMESTAMP('2020-11-26 08:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-11-26 09:30', 'YYYY-MM-DD HH24:MI')));
+INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 8, 4, 2, (TO_TIMESTAMP('2020-12-14 08:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-12-14 09:30', 'YYYY-MM-DD HH24:MI')));
 
 -- Wien - Bregenz (von Wien Bahnsteig B nach Bregenz Bahnsteig A)
-INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 10, 5, 3, (TO_TIMESTAMP('2020-11-26 09:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-11-26 18:00', 'YYYY-MM-DD HH24:MI')));
+INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 10, 5, 3, (TO_TIMESTAMP('2020-12-14 09:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-12-14 18:00', 'YYYY-MM-DD HH24:MI')));
 -- Bregenz - Wien (von Bregenz Bahnsteig A nach Wien Bahnsteig B)
-INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 5, 10, 3, (TO_TIMESTAMP('2020-11-27 21:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-11-28 06:00', 'YYYY-MM-DD HH24:MI')));
+INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 5, 10, 3, (TO_TIMESTAMP('2020-12-15 21:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-12-16 06:00', 'YYYY-MM-DD HH24:MI')));
 
 -- Wien - Salzburg (von Wien Bahnsteig B nach Salzburg Bahnsteig A)
-INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 16, 5, 4, (TO_TIMESTAMP('2020-11-28 09:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-11-28 12:00', 'YYYY-MM-DD HH24:MI')));
+INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 16, 5, 4, (TO_TIMESTAMP('2020-12-16 09:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-12-16 12:00', 'YYYY-MM-DD HH24:MI')));
 -- Salzburg - Wien (von Salzburg Bahnsteig A nach Wien Bahnsteig B)
-INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 5, 16, 4, (TO_TIMESTAMP('2020-11-28 15:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-11-28 18:00', 'YYYY-MM-DD HH24:MI')));
+INSERT INTO verbindung VALUES (verbindung_id_seq.NEXTVAL, 5, 16, 4, (TO_TIMESTAMP('2020-12-16 15:00', 'YYYY-MM-DD HH24:MI')), (TO_TIMESTAMP('2020-12-16 18:00', 'YYYY-MM-DD HH24:MI')));
 
 
 
